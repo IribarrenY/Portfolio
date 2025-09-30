@@ -79,12 +79,12 @@ ul.skills {
     gap: 12px;
 }
 ul.skills li {
-    background: #44d;
+    background: transparent;
     color: #fff;
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 1rem;
-    box-shadow: 2px 2px 0 #222;
+    box-shadow: none;
 }
 .projects {
     display: grid;
@@ -99,6 +99,9 @@ ul.skills li {
     padding: 16px;
     box-shadow: 2px 2px 0 #222;
     font-size: 1.1rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 .project-card h3 {
     margin: 0 0 8px 0;
@@ -115,4 +118,60 @@ footer {
     border-top: 4px solid #44d;
     box-shadow: 0 -4px 0 #222;
     margin-top: 40px;
+}
+/* Menu déroulant principal */
+.menu-dropdown {
+    display: inline-block;
+    position: relative;
+    margin: 0 8px;
+    z-index: 10;
+}
+.menu-dropdown > a {
+    color: #fff;
+    background: #44d;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 #222;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+.menu-dropdown > a:hover {
+    background: #88f;
+}
+/* Sous-menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 220px;
+    background: #222;
+    border: 2px solid #44d;
+    border-radius: 6px;
+    box-shadow: 2px 2px 0 #111;
+    z-index: 100;
+    padding: 8px 0;
+}
+.menu-dropdown:hover .dropdown-content,
+.menu-dropdown:focus-within .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    display: block;
+    color: #fff;
+    background: none;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 1rem;
+    text-align: left;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.dropdown-content a:hover {
+    background: #44d;
+    color: #fff;
 }
