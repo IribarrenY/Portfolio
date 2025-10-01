@@ -175,3 +175,70 @@ footer {
     background: #44d;
     color: #fff;
 }
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        max-width: 95vw;
+        padding: 16px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    nav, .menu-dropdown {
+        font-size: 1rem;
+    }
+    .avatar {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        padding: 12px 0;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+    }
+    nav a, .menu-dropdown > a {
+        padding: 6px 10px;
+        font-size: 0.95rem;
+        margin: 2px 2px;
+    }
+    .container {
+        padding: 8px;
+    }
+    .avatar {
+        width: 48px;
+        height: 48px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .project-card {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+    ul.skills {
+        gap: 6px;
+        font-size: 0.95rem;
+    }
+    footer {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+}
