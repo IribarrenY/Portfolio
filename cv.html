@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Yohan Iribarren</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" href="logo-removebg-preview.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-    <h1>Yohan Iribarren</h1>
+    <div class="header-logo-title">
+        <a href="index.html">
+            <img src="logo-removebg-preview.png" alt="Logo" class="site-logo">
+        </a>
+    </div>
         <nav>
-            <a href="cv.html">CV</a>
+            <div class="menu-dropdown">
+               <a href="cv.html">CV</a>
+               <div class="dropdown-content">
+                    <a href="#infos">Informations</a>
+                    <a href="#formations">Formation</a>
+                    <a href="#competences">Compétences</a>
+                    <a href="#experiences">Expériences professionnelles</a>
+                    <a href="#qualites">Qualités</a>
+                </div>
+            </div>
             <div class="menu-dropdown">
                 <a href="#ateliers">Ateliers professionnels</a>
                 <div class="dropdown-content">
@@ -64,11 +78,11 @@
             <br>
             <h2>Compétences</h2>
             <ul class="skills">
-                <li><strong>Programmation :</strong> Javascript, Python, PHP, Java et programmation objet</li>
-                <li><strong>Base de données :</strong> SQL, modélisation des données (méthode Merise, langages UML), SGBD MySQL et interface PHPMyAdmin, NoSQL</li>
-                <li><strong>Internet :</strong> HTML, CSS, PHP, CMS (WordPress), référencement et mesure d’audience, architecture MVC</li>
-                <li><strong>Base de la gestion de projet :</strong> Gantt, Kanban, Compte-rendu d’activité, recette, gestion de versions GIT</li>
-                <li><strong>Cybersécurité :</strong> Loi, RGPD, CNIL, bonnes pratiques, installation chiffrement, signature électronique, installation pare-feu, antivirus, sécurisation du SI, initiation hacking, campagne de sensibilisation</li>
+                <li><strong>Programmation</strong> <br><br>Javascript, Python, PHP, Java et programmation objet</li>
+                <li><strong>Base de données</strong> <br><br> SQL, modélisation des données (méthode Merise, langages UML), SGBD MySQL et interface PHPMyAdmin, NoSQL</li>
+                <li><strong>Internet</strong> <br><br>HTML, CSS, PHP, CMS (WordPress), référencement et mesure d’audience, architecture MVC</li>
+                <li><strong>Base de la gestion de projet</strong><br><br> Gantt, Kanban, Compte-rendu d’activité, recette, gestion de versions GIT</li>
+                <li><strong>Cybersécurité</strong><br><br> Loi, RGPD, CNIL, bonnes pratiques, installation chiffrement, signature électronique, installation pare-feu, antivirus, sécurisation du SI, initiation hacking, campagne de sensibilisation</li>
             </ul>
         </section>
         <section id="experiences">
@@ -78,19 +92,25 @@
                 <div class="project-card">
                     <h3><i>Juillet 2025</i> <br><br> Développeur Python  - TotalEnergies</h3>
                     <p>Centre Scientifique et Technique Jean Féger, Pau<br>
-                    Mise en place de tests unitaires sur une application existante<br>
-                    Simplifications de scripts Python</p>
+                        <ul>
+                            <li>Mise en place de tests unitaires sur une application existante</li>
+                            <li>Simplifications de scripts Python</li>
+                        </ul>
                 </div>
                 <div class="project-card">
                     <h3> <i>Juin 2025</i><br><br> Stage de développement  - Laboratoire de recherche</h3>
                     <p>Domolandes, Saint-Geours-de-Maremne<br>
-                    Audit d’un site existant et élaboration d’un plan de remédiation</p>
+                        <ul>
+                            <li>Audit d’un site existant et élaboration d’un plan de remédiation</li>
+                        </ul>
                 </div>
                 <div class="project-card">
                     <h3><i>2020-2024</i><br><br> Aide-Soignant</h3>
-                    <p>Différentes structures de Pau et Bayonne<br>
-                    Travail de jour et de nuit<br>
-                    Public : Personnes âgées, personnes en situation d’handicap, troubles cognitifs</p>
+                    <p>Différentes structures de Pau et Bayonne</p>
+                    <ul>
+                        <li>Travail de jour et de nuit</li>
+                        <li>Public : Personnes âgées, personnes en situation d’handicap, troubles cognitifs</li>
+                    </ul>
                 </div>
             </div>
         </section>
