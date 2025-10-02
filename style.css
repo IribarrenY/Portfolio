@@ -24,8 +24,27 @@ header {
 .site-logo {
     display: inline-block;
     margin: 0;
-    height: 120px;
-    width: auto;
+    height: auto;
+    max-width: 100%;
+    width: 120px;
+    min-width: 32px;
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .site-logo {
+        width: 70px;
+        min-width: 24px;
+        height: auto;
+        max-width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .site-logo {
+        width: 40px;
+        min-width: 16px;
+        height: auto;
+        max-width: 100%;
+    }
 }
 h1 {
     font-size: 2.5rem;
