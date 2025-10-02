@@ -6,7 +6,7 @@ let directions = Array(menuLinks.length).fill(1);
 let selectedIndex = 0;
 
 function animateCursor(cursor, i) {
-    offsets[i] += directions[i] * 0.4;
+    offsets[i] += directions[i] * 0.18;
     if (offsets[i] > 4) directions[i] = -1;
     if (offsets[i] < -4) directions[i] = 1;
     cursor.style.left = (8 + offsets[i]) + 'px';

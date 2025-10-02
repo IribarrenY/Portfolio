@@ -63,15 +63,21 @@ h1 {
 .index{
     font-size: 2.5rem;
     letter-spacing: 2px;
-    margin: 0 0 24px 0;
+    margin: 40px 0 24px 0;
+
+@media (min-width: 900px) {
+    .index {
+        margin-top: 90px;
+    }
+}
     color: #44d;
     text-shadow: 2px 2px 0 #000;
     width: 100%;
     text-align: center;
-    position: absolute;
-    top: 28%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
     z-index: 2;
 }
 h2 {
@@ -316,6 +322,9 @@ footer {
         width: 72px;
         height: 72px;
     }
+     .menu-principal a {
+        text-align: left;
+     }
 }
 
 @media (max-width: 600px) {
@@ -366,6 +375,7 @@ footer {
         display: block;
         border-radius: 16px;
         margin: 8px auto;
+        text-align: left;
         /* touch-action et user-select supprimés pour permettre le clic rapide sur mobile */
     }
     nav, .cv-nav {
