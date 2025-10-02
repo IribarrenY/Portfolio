@@ -266,8 +266,7 @@ footer {
     position: relative;
     display: block;
     background: none;
-    touch-action: manipulation;
-    user-select: none;
+    /* touch-action et user-select supprimés pour permettre le clic rapide sur mobile */
 }
 .menu-principal a:hover {
     color: #bbb !important;
@@ -367,8 +366,7 @@ footer {
         display: block;
         border-radius: 16px;
         margin: 8px auto;
-        touch-action: manipulation;
-        user-select: none;
+        /* touch-action et user-select supprimés pour permettre le clic rapide sur mobile */
     }
     nav, .cv-nav {
         display: flex;
