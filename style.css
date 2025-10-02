@@ -259,13 +259,15 @@ footer {
     color: #bbb;
     font-size: 1.1rem;
     text-decoration: none;
-    padding: 8px 24px 8px 40px;
-    border-radius: 6px;
+    padding: 16px 32px 16px 48px;
+    border-radius: 12px;
     transition: background 0.2s, color 0.2s;
     text-shadow: 2px 2px 0 #222, 1px 1px 0 #fff;
     position: relative;
-    display: inline-block;
+    display: block;
     background: none;
+    touch-action: manipulation;
+    user-select: none;
 }
 .menu-principal a:hover {
     color: #bbb !important;
@@ -357,12 +359,16 @@ footer {
         text-align: center;
     }
     .menu-principal a {
-        font-size: 0.95rem;
-        padding: 8px 16px;
+        font-size: 1.1rem;
+        padding: 18px 10vw 18px 48px;
         width: 90vw;
-        max-width: 320px;
+        max-width: 340px;
         box-sizing: border-box;
-        display: inline-block;
+        display: block;
+        border-radius: 16px;
+        margin: 8px auto;
+        touch-action: manipulation;
+        user-select: none;
     }
     nav, .cv-nav {
         display: flex;
