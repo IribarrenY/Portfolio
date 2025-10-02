@@ -83,11 +83,16 @@ nav a:hover {
 .container {
     max-width: 800px;
     margin: 40px auto;
-    background: rgba(34,34,34,0.95);
-    border: 4px solid #44d;
     border-radius: 8px;
     box-shadow: 0 8px 0 #222;
     padding: 32px;
+}
+.index-container {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
 }
 .avatar {
     display: block;
