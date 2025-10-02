@@ -300,50 +300,92 @@ footer {
 
 @media (max-width: 600px) {
     body {
-        font-size: 14px;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
     }
     header {
-        padding: 12px 0;
+        padding: 8px 0;
     }
-    h1 {
-        font-size: 1.5rem;
+    h1, .index {
+        font-size: 1.1rem;
+        margin: 12px 0 18px 0;
+        word-break: break-word;
+        text-align: center;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
     }
     h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
+    .menu-principal {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        min-width: 0 !important;
+        width: 100%;
+        align-items: center;
         justify-content: center;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .menu-principal > div {
+        width: 100%;
+        margin: 4px 0;
+        text-align: center;
+    }
+    .menu-principal a {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        width: 90vw;
+        max-width: 320px;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    nav, .cv-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
     }
     nav a, .menu-dropdown > a {
         padding: 6px 10px;
         font-size: 0.95rem;
         margin: 2px 2px;
+        width: 90vw;
+        max-width: 320px;
+        box-sizing: border-box;
+        display: inline-block;
     }
     .container {
-        padding: 8px;
+        padding: 4px;
+        margin: 0 auto;
+        width: 100vw;
+        box-sizing: border-box;
     }
     .avatar {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
     }
     .projects {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 6px;
     }
     .project-card {
-        padding: 8px;
-        font-size: 0.95rem;
+        padding: 4px;
+        font-size: 0.85rem;
     }
     ul.skills {
-        gap: 6px;
-        font-size: 0.95rem;
+        gap: 3px;
+        font-size: 0.85rem;
     }
     footer {
-        font-size: 0.9rem;
-        padding: 8px 0;
+        font-size: 0.8rem;
+        padding: 4px 0;
     }
 }
 body.index-page {
