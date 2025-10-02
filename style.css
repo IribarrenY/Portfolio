@@ -1,3 +1,4 @@
+   
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     background: #222 url('https://www.transparenttextures.com/patterns/8bit.png');
@@ -64,21 +65,11 @@ h1 {
     font-size: 2.5rem;
     letter-spacing: 2px;
     margin: 40px 0 24px 0;
-
 @media (min-width: 900px) {
     .index {
         margin-top: 90px;
     }
 }
-    color: #44d;
-    text-shadow: 2px 2px 0 #000;
-    width: 100%;
-    text-align: center;
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    z-index: 2;
 }
 h2 {
     color: #fff;
@@ -415,6 +406,13 @@ footer {
     ul.skills {
         gap: 3px;
         font-size: 0.85rem;
+        word-break: break-word;
+        max-width: 95vw;
+    }
+    ul.skills li {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 95vw;
     }
     footer {
         font-size: 0.8rem;
@@ -424,3 +422,11 @@ footer {
 body.index-page {
     cursor: none !important;
 }
+
+ ul.skills li a {
+        word-break: break-all;
+        overflow-wrap: break-word;
+        max-width: 90vw;
+        font-size: 0.8em;
+        display: inline-block;
+    }
