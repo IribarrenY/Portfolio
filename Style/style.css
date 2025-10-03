@@ -1,5 +1,3 @@
-
-   
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     background: #222 url('https://www.transparenttextures.com/patterns/8bit.png');
@@ -516,4 +514,30 @@ body.index-page {
         background: #222 !important;
         padding: 0 !important;
     }
+}
+
+/* Boîtes de compétences */
+.competence-box {
+    background: #222;
+    border: 2px solid #44d;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #111;
+    margin: 32px 0;
+    padding: 24px 18px;
+}
+.competence-box h2 {
+    color: #88f;
+    margin-top: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.competence-box h3 {
+    color: #44d;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+.competence-box ul {
+    margin-bottom: 18px;
+    margin-top: 0;
+    padding-left: 24px;
 }

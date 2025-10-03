@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // Vérifie qu'on n'est pas sur la page index
     if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
         const audio = document.createElement('audio');
-        audio.src = 'platform-shoes-8-bit-chiptune-instrumental-336417.mp3';
+        audio.src = '../sound/platform-shoes-8-bit-chiptune-instrumental-336417.mp3';
         audio.loop = true;
     audio.volume = 0.07;
         audio.autoplay = true;
