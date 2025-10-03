@@ -1,3 +1,4 @@
+
    
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
@@ -21,6 +22,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 12px;
+    position: relative;
 }
 .site-logo {
     display: inline-block;
@@ -430,3 +432,88 @@ body.index-page {
         font-size: 0.8em;
         display: inline-block;
     }
+
+    /* Menu burger pour mobile */
+#burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: #222;
+    border: 2px solid #44d;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+#burger-menu .burger-bar {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background: #44d;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+#burger-menu.active .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+#burger-menu.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+#burger-menu.active .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 1840px) {
+    #burger-menu {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+    }
+    .site-logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    header nav {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        z-index: 1000;
+        box-shadow: 0 4px 16px #111;
+        border-bottom: 2px solid #44d;
+        padding: 16px 0;
+    }
+    header nav.open {
+        display: flex;
+    }
+    .menu-dropdown, .menu-dropdown > a, .dropdown-content, header nav > a {
+        width: 90vw !important;
+        max-width: 340px;
+        margin: 8px auto !important;
+        text-align: left;
+        font-size: 1.1rem;
+    }
+    .dropdown-content {
+        position: static !important;
+        min-width: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: #222 !important;
+        padding: 0 !important;
+    }
+}

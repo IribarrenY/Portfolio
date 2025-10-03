@@ -1,9 +1,10 @@
 // Animation fluide du curseur main sur le menu principal (vitesse et distance réduites + sélection clavier)
-const menuLinks = document.querySelectorAll('.menu-principal a');
-let animationFrames = Array(menuLinks.length).fill(null);
-let offsets = Array(menuLinks.length).fill(0);
-let directions = Array(menuLinks.length).fill(1);
+let menuLinks;
+let animationFrames;
+let offsets;
+let directions;
 let selectedIndex = 0;
+let selectAudio;
 
 function animateCursor(cursor, i) {
     offsets[i] += directions[i] * 0.18;
@@ -40,6 +41,13 @@ function updateSelection(index) {
             link.classList.add('selected');
             link.focus();
             startCursorAnimation(link, i);
+            // Joue le son à chaque sélection
+            if (selectAudio) {
+                try {
+                    selectAudio.currentTime = 0;
+                    selectAudio.play();
+                } catch (e) {}
+            }
         } else {
             link.classList.remove('selected');
             stopCursorAnimation(link, i);
@@ -49,6 +57,12 @@ function updateSelection(index) {
 
 // Sélectionne CV au chargement
 window.addEventListener('DOMContentLoaded', () => {
+    menuLinks = document.querySelectorAll('.menu-principal a');
+    animationFrames = Array(menuLinks.length).fill(null);
+    offsets = Array(menuLinks.length).fill(0);
+    directions = Array(menuLinks.length).fill(1);
+    selectAudio = new Audio('computer-processing-sound-effects-short-click-select-01-122134.mp3');
+    selectAudio.volume = 0.5;
     updateSelection(0);
     document.body.style.cursor = 'none';
 });
