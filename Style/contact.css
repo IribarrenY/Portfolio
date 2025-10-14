@@ -1,0 +1,25 @@
+/* ✅ Animation rétro de validation */
+@keyframes blink-text {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+}
+
+/* ✅ Message de succès */
+.form-success {
+    color: #0f0;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #000;
+    animation: blink-text 0.7s infinite;
+}
+
+/* ❌ Message d’erreur */
+.form-error {
+    color: #f44;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #000;
+    animation: blink-text 0.7s infinite;
+}

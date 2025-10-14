@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
     animationFrames = Array(menuLinks.length).fill(null);
     offsets = Array(menuLinks.length).fill(0);
     directions = Array(menuLinks.length).fill(1);
-    selectAudio = new Audio('computer-processing-sound-effects-short-click-select-01-122134.mp3');
+    selectAudio = new Audio('../sound/computer-processing-sound-effects-short-click-select-01-122134.mp3');
     selectAudio.volume = 0.5;
     updateSelection(0);
     document.body.style.cursor = 'none';

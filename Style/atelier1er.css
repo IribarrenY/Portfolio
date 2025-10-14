@@ -1,0 +1,65 @@
+/* === STYLE ATELIERS PROFESSIONNELS === */
+
+.semestre {
+    margin-bottom: 60px;
+}
+
+.semestre h2 {
+    text-align: center;
+    color: #88f;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.project-card {
+    background: #222;
+    border: 2px solid #44d;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 #000;
+    width: 320px;
+    padding: 20px;
+    color: #fff;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 6px 6px 0 #000;
+    background: #292929;
+}
+
+.project-card h3 {
+    color: #88f;
+    text-shadow: 1px 1px 0 #000;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 0 #000;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}

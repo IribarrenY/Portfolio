@@ -541,3 +541,88 @@ body.index-page {
     margin-top: 0;
     padding-left: 24px;
 }
+
+/* Retro contact form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: linear-gradient(180deg,#222,#2a2a2a);
+    border: 4px solid #44d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 0 #111;
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    color: #88f;
+    margin-bottom: 4px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background: #111;
+    color: #fff;
+    border: 2px solid #44d;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.6);
+    resize: vertical;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #667;
+    opacity: 0.9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #88f;
+    box-shadow: 0 4px 0 #111, 0 0 8px rgba(136,136,255,0.12);
+}
+
+.contact-form button[type="submit"] {
+    background: #44d;
+    color: #fff;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #111;
+    transition: transform 0.06s ease, box-shadow 0.06s ease;
+    font-family: 'Press Start 2P', cursive; /* use same retro font */
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+.contact-form button[type="submit"]:active {
+    transform: translateY(3px);
+    box-shadow: 1px 1px 0 #111;
+}
+
+.contact-form #form-status {
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 12px;
+        gap: 8px;
+    }
+    .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    .contact-form button[type="submit"] {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
