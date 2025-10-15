@@ -1,11 +1,11 @@
-// Menu burger pour la page CV
-// Affiche/masque le menu principal sur mobile
+window.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger-menu');
+  const nav = document.querySelector('header nav');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.getElementById('burger-menu');
-    const nav = document.querySelector('header nav');
-    burger.addEventListener('click', function() {
-        nav.classList.toggle('open');
-        burger.classList.toggle('active');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('open');
     });
+  }
 });

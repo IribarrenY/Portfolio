@@ -1,0 +1,83 @@
+/* === STYLE DE LA PAGE VEILLE === */
+
+.veille-container {
+    max-width: 980px;
+    margin: 36px auto;
+    padding: 28px;
+    background: rgba(17, 17, 17, 0.9);
+    border: 2px solid #44d;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0 #000;
+    color: #fff;
+}
+
+.veille-header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.veille-header h1 {
+    color: #44d;
+    margin: 0 0 8px 0;
+    font-size: 1.4rem;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #88f;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.veille-section {
+    margin-bottom: 18px;
+    padding: 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(136, 136, 255, 0.06);
+}
+
+.veille-section h2 {
+    margin: 0 0 8px 0;
+    color: #88f;
+    font-size: 1rem;
+}
+
+.veille-section p,
+.veille-section li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #fff;
+    margin: 6px 0;
+}
+
+.kv-list {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.kv-list li {
+    background: rgba(68, 137, 221, 0.08);
+    border: 1px solid rgba(68, 137, 221, 0.18);
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #cfe;
+    font-size: 0.85rem;
+}
+
+a {
+    color: #88f;
+    text-decoration: none;
+}
+
+
+@media (max-width: 900px) {
+    .veille-container {
+        margin: 18px 12px;
+        padding: 18px;
+    }
+}

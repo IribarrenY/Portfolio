@@ -25,7 +25,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     const status = document.getElementById("form-status");
 
     if (response.ok) {
-        status.textContent = "✅ MESSAGE ENVOYÉ";
+        status.textContent = "✅ MESSAGE ENVOYE";
         status.className = "form-success";
         form.reset();
 

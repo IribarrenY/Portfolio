@@ -1,0 +1,26 @@
+#music-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  background: #111;
+  border: 2px solid #44d;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+  z-index: 2000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.3s;
+}
+
+#music-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 #000;
+  filter: brightness(1.3);
+}
+
+#music-toggle.paused {
+  border-color: #f44;
+  filter: hue-rotate(-20deg) brightness(1.1);
+}
