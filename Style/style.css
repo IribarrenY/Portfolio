@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
-    background: #222 url('https://www.transparenttextures.com/patterns/8bit.png');
+    background: #222 url('../img/castle.jpg');
     color: #fff;
     font-family: 'Press Start 2P', cursive;
     margin: 0;
