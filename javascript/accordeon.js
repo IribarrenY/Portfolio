@@ -1,7 +1,7 @@
 // Script pour l'accordéon des compétences
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.competence-title').forEach(function(title) {
+    document.querySelectorAll('.accordeon-title').forEach(function(title) {
         title.addEventListener('click', function() {
             var content = this.nextElementSibling;
             if (content.style.display === 'none' || content.style.display === '') {
