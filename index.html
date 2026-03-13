@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yohan Iribarren — Deep Sea Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="ocean-canvas"></canvas>
+
+<!-- ALGAE -->
+<svg class="algae" style="left:3%;animation-delay:0s" width="18" height="80" viewBox="0 0 18 80">
+  <path d="M9 80 Q3 65 9 50 Q15 35 9 20 Q3 10 9 0" stroke="#00c9aa" stroke-width="2.5" fill="none" opacity="0.35"/>
+</svg>
+<svg class="algae" style="left:6%;animation-delay:0.7s;height:55px" width="14" height="55" viewBox="0 0 14 55">
+  <path d="M7 55 Q2 42 7 30 Q12 18 7 8 Q2 2 7 0" stroke="#00e5ff" stroke-width="2" fill="none" opacity="0.25"/>
+</svg>
+<svg class="algae" style="right:4%;animation-delay:1.2s" width="18" height="90" viewBox="0 0 18 90">
+  <path d="M9 90 Q3 72 9 55 Q15 38 9 22 Q3 10 9 0" stroke="#00c9aa" stroke-width="2.5" fill="none" opacity="0.3"/>
+</svg>
+<svg class="algae" style="right:8%;animation-delay:0.3s;height:60px" width="14" height="60" viewBox="0 0 14 60">
+  <path d="M7 60 Q2 46 7 33 Q12 20 7 8 Q2 2 7 0" stroke="#39ff88" stroke-width="2" fill="none" opacity="0.2"/>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">DEEP<span>SEA</span>.sys</div>
+  <ul class="nav-tabs">
+    <li><a onclick="showPage('home')"        id="nav-home"        class="active"><span class="tn">00</span>🐟 accueil</a></li>
+    <li><a onclick="showPage('cv')"          id="nav-cv"         ><span class="tn">01</span>📋 cv</a></li>
+    <li><a onclick="showPage('ateliers')"    id="nav-ateliers"   ><span class="tn">02</span>🔧 ateliers</a></li>
+    <li><a onclick="showPage('stages')"      id="nav-stages"     ><span class="tn">03</span>🦑 stages</a></li>
+    <li><a onclick="showPage('veille')"      id="nav-veille"     ><span class="tn">04</span>🔭 veille</a></li>
+    <li><a onclick="showPage('competences')" id="nav-competences"><span class="tn">05</span>⚓ skills</a></li>
+    <li><a onclick="showPage('contact')"     id="nav-contact"    ><span class="tn">06</span>📡 contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HOME ═══════════ -->
+<section class="page" id="home">
+  <div class="home-grid">
+
+    <!-- SONAR TERMINAL -->
+    <div class="sonar-terminal" id="terminal" onclick="focusTermInput()">
+      <div class="sonar-ring"></div>
+      <div class="t-titlebar">
+        <div class="t-dot r"></div><div class="t-dot a"></div><div class="t-dot g"></div>
+        <span class="t-ttitle">SONAR_TERMINAL v2.0 — <span>~/portfolio</span></span>
+        <span class="t-ttitle" style="margin-left:auto;opacity:0.4;font-size:0.58rem">type 'help'</span>
+      </div>
+      <div class="t-body" id="term-output"></div>
+      <div class="t-input-row">
+        <span class="tp">yohan@deepsea</span>:<span class="tc">~$</span>&nbsp;<input id="term-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div>
+      <span class="home-tag">// SIGNAL DÉTECTÉ — PROFONDEUR: 404m</span>
+      <h1 class="home-name">
+        YOHAN<em>IRIBARREN</em>
+      </h1>
+      <div class="home-sub">// <span>BTS SIO SLAM</span> — 2024/2026</div>
+      <div class="home-sub">// Lycée <span>Saint-John Perse</span>, Pau</div>
+      <p class="home-desc">Ancien aide-soignant reconverti dans le code. Plongeur des abysses du développement web, explorateur de stacks PHP/Python depuis les eaux profondes du BTS SIO.</p>
+      <div class="btn-row">
+        <button class="btn btn-cyan" onclick="showPage('cv')">▹ sonar.scan(cv)</button>
+        <button class="btn btn-teal" onclick="showPage('contact')">▹ ping.contact()</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CV ═══════════ -->
+<section class="page" id="cv">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 01 ]</span><h2 class="stitle">CURRICULUM VITAE</h2><div class="sline"></div><span class="sicon">📋</span></div>
+    <div class="cv-cols">
+      <div class="cvb">
+        <div class="cvbt">📋 informations et coordonnées</div>
+        <div class="cvi"><div class="cvit">E-mail</div><div class="cvid">Iribarren.yohan@gmail.com</div></div>
+        <div class="cvi"><div class="cvit">Téléphone</div><div class="cvid">06 75 26 72 52</div></div>
+        <div class="cvi"><div class="cvit">Permis</div><div class="cvid">Permis B</div></div>
+      </div>
+      <div class="cvb">
+        <div class="cvbt">🎓 formation</div>
+        <div class="cvi"><div class="cvit">BTS Services informatiques aux organisations</div><div class="cvis">2024 – 2026</div><div class="cvid">option Solutions Logicielles et Applications Métier — Lycée Saint-John Perse, Pau</div></div>
+        <div class="cvi"><div class="cvit">Diplôme Aide-Soignant</div><div class="cvis">2020</div><div class="cvid">Institut de formation en soins infirmier, Bayonne</div></div>
+        <div class="cvi"><div class="cvit">Baccalauréat Service aux Personnes et au Territoire</div><div class="cvis">2016</div><div class="cvid">Lycée Frantsesenia, St Jean Pied de Port</div></div>
+      </div>
+      <div class="cvb">
+        <div class="cvbt">🐠 compétences techniques</div>
+        <div class="cvi"><div class="cvit">Programmation</div><div class="cvid">Javascript, Python, PHP, Java et programmation objet</div></div>
+        <div class="cvi"><div class="cvit">Base de données</div><div class="cvid">SQL, modélisation des données (méthode Merise, langages UML), SGBD MySQL et interface PHPMyAdmin, NoSQL</div></div>
+        <div class="cvi"><div class="cvit">Internet</div><div class="cvid">HTML, CSS, PHP, CMS (WordPress), référencement et mesure d'audience, architecture MVC</div></div>
+        <div class="cvi"><div class="cvit">Base de la gestion de projet</div><div class="cvid">Gantt, Kanban, Compte-rendu d'activité, recette, gestion de versions GIT</div></div>
+        <div class="cvi"><div class="cvit">Cybersécurité</div><div class="cvid">Loi, RGPD, CNIL, bonnes pratiques, installation chiffrement, signature électronique, installation pare-feu, antivirus, sécurisation du SI, initiation hacking, campagne de sensibilisation</div></div>
+      </div>
+      <div class="cvb">
+        <div class="cvbt">💼 expériences professionnelles</div>
+        <div class="cvi"><div class="cvit">Développeur Python — TotalEnergies</div><div class="cvis">Juillet 2025</div><div class="cvid">Centre Scientifique et Technique Jean Féger, Pau<br>· Mise en place de tests unitaires sur une application existante<br>· Simplifications de scripts Python</div></div>
+        <div class="cvi"><div class="cvit">Stage de développement — Laboratoire de recherche</div><div class="cvis">Juin 2025</div><div class="cvid">Domolandes, Saint-Geours-de-Maremne<br>· Audit d'un site existant et élaboration d'un plan de remédiation</div></div>
+        <div class="cvi"><div class="cvit">Aide-Soignant</div><div class="cvis">2020 – 2024</div><div class="cvid">Différentes structures de Pau et Bayonne<br>· Travail de jour et de nuit<br>· Public : Personnes âgées, personnes en situation d'handicap, troubles cognitifs</div></div>
+      </div>
+      <div class="cvb">
+        <div class="cvbt">🌊 qualités</div>
+        <div class="cvi"><div class="cvit">Autonome</div></div>
+        <div class="cvi"><div class="cvit">Curieux</div></div>
+        <div class="cvi"><div class="cvit">Investi</div></div>
+        <div class="cvi"><div class="cvit">Réactif</div></div>
+      </div>
+    </div>
+    <div class="sep"><div class="sepline"></div><div class="septxt">// fin_du_fichier</div><div class="sepline"></div></div>
+    <div class="cq"><em>// transmission :</em> « Ancien soignant devenu développeur — j'ai juste changé de bloc opératoire. »</div>
+  </div>
+</section>
+
+<!-- ═══════════ ATELIERS ═══════════ -->
+<section class="page" id="ateliers">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 02 ]</span><h2 class="stitle">ATELIERS PRO</h2><div class="sline"></div><span class="sicon">🔧</span></div>
+    <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Mises en situation professionnelles — cliquez sur un projet pour le détailler.</div>
+
+    <div class="depth-section">// 1ère année — semestre 1</div>
+    <div class="tline">
+      <div class="tli"><div class="tldot"></div>
+        <div class="card card-clickable" onclick="openModal('cv-perso')">
+          <div class="ctitle">🌐 Site Web personnel (CV)</div>
+          <div class="cmeta"><span>1ère année</span> · Semestre 1</div>
+          <div class="tags"><span class="tag tc2">HTML</span><span class="tag tt">CSS</span><span class="tag tg">JavaScript</span></div>
+          <div class="card-hint">▹ cliquer pour détailler</div>
+        </div>
+      </div>
+      <div class="tli"><div class="tldot"></div>
+        <div class="card card-clickable" onclick="openModal('locaboard')">
+          <div class="ctitle">🚗 Projet Locaboard</div>
+          <div class="cmeta"><span>1ère année</span> · Semestre 1</div>
+          <div class="tags"><span class="tag tc2">HTML</span><span class="tag tt">CSS</span><span class="tag tg">PHP</span><span class="tag tr">JavaScript</span></div>
+          <div class="card-hint">▹ cliquer pour détailler</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depth-section">// 1ère année — semestre 2</div>
+    <div class="tline">
+      <div class="tli"><div class="tldot"></div>
+        <div class="card card-clickable" onclick="openModal('picdumidi')">
+          <div class="ctitle">🏔️ Site Boutique Pic du Midi</div>
+          <div class="cmeta"><span>1ère année</span> · Semestre 2</div>
+          <div class="tags"><span class="tag tc2">WordPress</span><span class="tag tt">GanttProject</span><span class="tag tg">CMS</span></div>
+          <div class="card-hint">▹ cliquer pour détailler</div>
+        </div>
+      </div>
+      <div class="tli"><div class="tldot"></div>
+        <div class="card card-clickable" onclick="openModal('netcar')">
+          <div class="ctitle">🚘 Projet Netcar</div>
+          <div class="cmeta"><span>1ère année</span> · Semestre 2</div>
+          <div class="tags"><span class="tag tc2">HTML</span><span class="tag tt">CSS</span><span class="tag tg">Git</span><span class="tag tr">NetBeans</span></div>
+          <div class="card-hint">▹ cliquer pour détailler</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depth-section">// 2ème année — semestre 1</div>
+    <div class="tline">
+      <div class="tli"><div class="tldot"></div>
+        <div class="card card-clickable" onclick="openModal('sitefa')">
+          <div class="ctitle">🎡 Projet Site FA</div>
+          <div class="cmeta"><span>2ème année</span> · Semestre 1 · Méthode Agile</div>
+          <div class="tags"><span class="tag tc2">PHP</span><span class="tag tt">CSS</span><span class="tag tg">HTML</span><span class="tag tr">GitHub</span></div>
+          <div class="card-hint">▹ cliquer pour détailler</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MODALS PROJETS ═══════════ -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(2,13,20,0.88);z-index:5000;backdrop-filter:blur(6px);"></div>
+
+<div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5001;width:min(780px,95vw);max-height:85vh;overflow-y:auto;background:var(--panel);border:1px solid var(--border2);border-radius:10px;box-shadow:0 0 60px rgba(0,229,255,0.12);scrollbar-width:thin;scrollbar-color:var(--border2) transparent;">
+  <div style="position:sticky;top:0;background:var(--panel2);border-bottom:1px solid var(--border);padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;z-index:1;">
+    <span id="modal-title" style="font-family:'Orbitron',monospace;font-size:.85rem;color:var(--cyan);letter-spacing:.08em;"></span>
+    <button onclick="closeModal()" style="background:none;border:1px solid var(--border2);color:var(--text-dim);padding:.3rem .8rem;border-radius:4px;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:.75rem;">✕ fermer</button>
+  </div>
+  <div id="modal-body" style="padding:1.6rem;"></div>
+</div>
+
+<!-- Données des modals -->
+<!-- ═══════════ STAGES ═══════════ -->
+<section class="page" id="stages">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 03 ]</span><h2 class="stitle">STAGES</h2><div class="sline"></div><span class="sicon">🦑</span></div>
+    <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Immersions professionnelles — cliquez sur un stage pour le détailler.</div>
+
+    <div class="card card-clickable" style="margin-bottom:1.5rem" onclick="openModal('domolandes')">
+      <div class="ctitle">🏗️ Stage de 1ère année — Domolandes</div>
+      <div class="cmeta"><span>Juin – Juillet 2025</span> · Saint-Geours-de-Maremne</div>
+      <div class="tags"><span class="tag tc2">Docker</span><span class="tag tt">GitHub</span><span class="tag tg">Markdown</span><span class="tag tr">VSCode</span></div>
+      <div class="card-hint">▹ cliquer pour détailler</div>
+    </div>
+
+    <div class="card card-clickable" onclick="openModal('studio29')">
+      <div class="ctitle">📸 Stage de 2ème année — 29Studio</div>
+      <div class="cmeta"><span>Janvier – Février 2026</span> · Paris</div>
+      <div class="tags"><span class="tag tc2">MVC</span><span class="tag tt">DAO</span><span class="tag tg">GitHub</span><span class="tag tr">TNR</span></div>
+      <div class="card-hint">▹ cliquer pour détailler</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VEILLE ═══════════ -->
+<section class="page" id="veille">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 04 ]</span><h2 class="stitle">VEILLE TECH</h2><div class="sline"></div><span class="sicon">🔭</span></div>
+    <div class="cq" style="margin-bottom:2rem"><em>/* Sonar actif — Nouvelles technologies &amp; facilitation du travail des soignants. */</em></div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+      <div class="ctitle">🏥 Sujet de veille</div>
+      <p><strong style="color:var(--cyan)">Comment les nouvelles technologies peuvent faciliter le travail des soignants dans les hôpitaux ?</strong></p>
+      <div class="sep" style="margin:.9rem 0 .4rem"><div class="sepline"></div><div class="septxt">// contexte</div><div class="sepline"></div></div>
+      <p style="font-size:0.73rem;color:var(--text-dim)">Dans un contexte d'évolution constante des technologies et de contraintes humaines et financières, il est essentiel d'étudier comment les outils numériques s'intègrent dans les structures hospitalières pour faciliter le soin et compenser les manques de moyens.</p>
+      <div class="sep" style="margin:.9rem 0 .4rem"><div class="sepline"></div><div class="septxt">// mots-clés</div><div class="sepline"></div></div>
+      <div class="tags"><span class="tag tc2">IA médicale</span><span class="tag tt">Télémédecine</span><span class="tag tg">Robotique médicale</span><span class="tag tr">Dossier patient électronique</span></div>
+    </div>
+
+    <div class="depth-section">// sources &amp; outils de veille</div>
+    <div class="vgrid">
+      <div class="card"><div class="ctitle">📡 Flux RSS</div><p>TICsanté — ticsante.com. Actualités e-santé et innovation médicale en continu.</p><div class="tags"><span class="tag tc2">RSS</span></div></div>
+      <div class="card"><div class="ctitle">🐦 Réseaux sociaux</div><p>Listes Twitter/X spécialisées e-santé. Pages Facebook institutionnelles (ARS, CHU, associations).</p><div class="tags"><span class="tag tt">Twitter/X</span><span class="tag tg">Facebook</span></div></div>
+      <div class="card"><div class="ctitle">🔔 Google Alerts</div><p>Alertes hebdomadaires : "nouvelles technologies hôpital", "IA médicale", "télémédecine".</p><div class="tags"><span class="tag tr">Google Alerts</span></div></div>
+      <div class="card"><div class="ctitle">📚 Bases de données</div><p>PubMed, HAL, sites officiels du Ministère de la Santé. Sources académiques et institutionnelles.</p><div class="tags"><span class="tag tc2">PubMed</span><span class="tag tt">HAL</span></div></div>
+      <div class="card"><div class="ctitle">💼 Plateformes pro</div><p>LinkedIn, newsletters santé spécialisées. Réseau professionnel et veille sectorielle.</p><div class="tags"><span class="tag tg">LinkedIn</span></div></div>
+      <div class="card"><div class="ctitle">⚙️ Méthodologie</div><p>Collecte automatique → Filtrage par pertinence et fiabilité → Synthèse hebdomadaire et archivage.</p><div class="tags"><span class="tag ta">Hebdomadaire</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COMPETENCES ═══════════ -->
+<section class="page" id="competences">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 05 ]</span><h2 class="stitle">DEPTH METER</h2><div class="sline"></div><span class="sicon">⚓</span></div>
+    <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Cliquez sur une compétence pour dérouler la liste.</div>
+
+    <!-- BLOC 1 -->
+    <div class="depth-section">// 1. support et mise à disposition des services informatiques</div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.1 — Gestion du patrimoine informatique <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Recenser et identifier les ressources numériques</li><li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li><li>Mettre en place et vérifier les niveaux d'habilitation associés à un service</li><li>Vérifier les conditions de la continuité d'un service informatique</li><li>Gérer des sauvegardes</li><li>Vérifier le respect des règles d'utilisation des ressources numériques</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('picdumidi'),100)">🏔️ Pic du Midi</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('netcar'),100)">🚘 Netcar</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.2 — Réponse aux incidents et aux demandes d'assistance et d'évolution <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Collecter, suivre et orienter des demandes</li><li>Traiter des demandes concernant les services réseau et système, applicatifs</li><li>Traiter des demandes concernant les applications</li></ul>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.3 — Développement de la présence en ligne de l'organisation <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Participer à la valorisation de l'image de l'organisation sur les médias numériques en tenant compte du cadre juridique et des enjeux économiques</li><li>Référencer les services en ligne de l'organisation et mesurer leur visibilité</li><li>Participer à l'évolution d'un site Web exploitant les données de l'organisation</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('cv-perso'),100)">🌐 CV perso</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('locaboard'),100)">🚗 Locaboard</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('sitefa'),100)">🎡 Site FA</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('stages');setTimeout(()=>openModal('domolandes'),100)">🏗️ Domolandes</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.4 — Travail en mode projet <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Analyser les objectifs et les modalités d'organisation d'un projet</li><li>Planifier les activités</li><li>Évaluer les indicateurs de suivi d'un projet et analyser les écarts</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('picdumidi'),100)">🏔️ Pic du Midi</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('sitefa'),100)">🎡 Site FA</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.5 — Mise à disposition des utilisateurs d'un service informatique <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Réaliser les tests d'intégration et d'acceptation d'un service</li><li>Déployer un service</li><li>Accompagner les utilisateurs dans la mise en place d'un service</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('stages');setTimeout(()=>openModal('studio29'),100)">📸 29Studio</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">1.6 — Organisation de son développement professionnel <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Mettre en place son environnement d'apprentissage personnel</li><li>Mettre en œuvre des outils et stratégies de veille informationnelle</li><li>Gérer son identité professionnelle</li><li>Développer son projet professionnel</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('cv-perso'),100)">🌐 CV perso</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('sitefa'),100)">🎡 Site FA</button></div>
+      </div>
+    </div>
+
+    <!-- BLOC 2 -->
+    <div class="depth-section" style="margin-top:2rem">// 2. conception et développement d'applications</div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">2.1 — Conception et développement d'une solution applicative <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Analyser un besoin exprimé et son contexte juridique</li><li>Participer à la conception de l'architecture d'une solution applicative</li><li>Modéliser une solution applicative</li><li>Exploiter les ressources du cadre applicatif (framework)</li><li>Identifier, développer, utiliser ou adapter des composants logiciels</li><li>Exploiter les technologies Web pour mettre en œuvre les échanges entre applications, y compris de mobilité</li><li>Utiliser des composants d'accès aux données</li><li>Intégrer en continu les versions d'une solution applicative</li><li>Réaliser les tests nécessaires à la validation ou à la mise en production d'éléments adaptés ou développés</li><li>Rédiger des documentations technique et d'utilisation d'une solution applicative</li><li>Exploiter les fonctionnalités d'un environnement de développement et de tests</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('netcar'),100)">🚘 Netcar</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('sitefa'),100)">🎡 Site FA</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('stages');setTimeout(()=>openModal('studio29'),100)">📸 29Studio</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">2.2 — Maintenance corrective ou évolutive d'une solution applicative <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Recueillir, analyser et mettre à jour les informations sur une version d'une solution applicative</li><li>Évaluer la qualité d'une solution applicative</li><li>Analyser et corriger un dysfonctionnement</li><li>Mettre à jour des documentations technique et d'utilisation d'une solution applicative</li><li>Élaborer et réaliser les tests des éléments mis à jour</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('stages');setTimeout(()=>openModal('domolandes'),100)">🏗️ Domolandes</button></div>
+      </div>
+    </div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">2.3 — Gestion des données <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Exploiter des données à l'aide d'un langage de requêtes</li><li>Développer des fonctionnalités applicatives au sein d'un système de gestion de base de données (relationnel ou non)</li><li>Concevoir ou adapter une base de données</li><li>Administrer et déployer une base de données</li></ul>
+        <div class="acc-links"><span class="acc-links-label">// utilisé dans :</span><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('netcar'),100)">🚘 Netcar</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('ateliers');setTimeout(()=>openModal('sitefa'),100)">🎡 Site FA</button><button class="acc-link-btn" onclick="event.stopPropagation();showPage('stages');setTimeout(()=>openModal('studio29'),100)">📸 29Studio</button></div>
+      </div>
+    </div>
+
+    <!-- BLOC 3 -->
+    <div class="depth-section" style="margin-top:2rem">// 3. cybersécurité des services informatiques</div>
+
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">3.1 — Protection des données à caractère personnel <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Recenser les traitements sur les données à caractère personnel au sein de l'organisation</li><li>Identifier les risques liés à la collecte, au traitement, au stockage et à la diffusion des données à caractère personnel</li><li>Appliquer la réglementation en matière de collecte, de traitement et de conservation des données à caractère personnel</li><li>Sensibiliser les utilisateurs à la protection des données à caractère personnel</li></ul>
+      </div>
+    </div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">3.2 — Préservation de l'identité numérique de l'organisation <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Protéger l'identité numérique d'une organisation</li><li>Déployer les moyens appropriés de preuve électronique</li></ul>
+      </div>
+    </div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">3.3 — Sécurisation des équipements et des usages des utilisateurs <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Informer les utilisateurs sur les risques associés à l'utilisation d'une ressource numérique et promouvoir les bons usages à adopter</li><li>Identifier les menaces et mettre en œuvre les défenses appropriées</li><li>Gérer les accès et les privilèges appropriés</li><li>Vérifier l'efficacité de la protection</li></ul>
+      </div>
+    </div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">3.4 — Garantie de la disponibilité, de l'intégrité et de la confidentialité des services <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Caractériser les risques liés à l'utilisation malveillante d'un service informatique</li><li>Recenser les conséquences d'une perte de disponibilité, d'intégrité ou de confidentialité</li><li>Identifier les obligations légales qui s'imposent en matière d'archivage et de protection des données de l'organisation</li><li>Organiser la collecte et la conservation des preuves numériques</li><li>Appliquer les procédures garantissant le respect des obligations légales</li></ul>
+      </div>
+    </div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-title">3.5 — Cyber sécurisation d'une solution applicative et de son développement <span class="acc-arrow">▹</span></div>
+      <div class="acc-body">
+        <ul><li>Participer à la vérification des éléments contribuant à la qualité d'un développement informatique</li><li>Prendre en compte la sécurité dans un projet de développement d'une solution applicative</li><li>Mettre en œuvre et vérifier la conformité d'une solution applicative et de son développement à un référentiel, une norme ou un standard de sécurité</li><li>Prévenir les attaques</li><li>Analyser les connexions (logs)</li><li>Analyser des incidents de sécurité, proposer et mettre en œuvre des contre-mesures</li></ul>
+      </div>
+    </div>
+
+    <div class="sep" style="margin-top:2rem"><div class="sepline"></div><div class="septxt">// zone_abyssale</div><div class="sepline"></div></div>
+    <div class="cq"><em>// en cours d'exploration :</em> React · Node.js · Docker · TypeScript · NoSQL avancé</div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="page" id="contact">
+  <div class="sw">
+    <div class="sh"><span class="snum">[ 06 ]</span><h2 class="stitle">SIGNAL CONTACT</h2><div class="sline"></div><span class="sicon">📡</span></div>
+    <div class="clayout">
+      <div>
+        <div class="cq" style="margin-bottom:1.4rem;font-size:0.78rem">
+          <em>/*</em><br>
+          &nbsp;* Émission sonar active.<br>
+          &nbsp;* Disponible pour stage,<br>
+          &nbsp;* alternance ou projet.<br>
+          &nbsp;* Signal reçu sous 24h. 🐟<br>
+          <em>*/</em>
+        </div>
+        <a class="clink" href="mailto:Iribarren.yohan@gmail.com"><span class="ci">📡</span><div><div>Iribarren.yohan@gmail.com</div><span class="cl">// canal principal</span></div></a>
+        <a class="clink" href="https://github.com/iribarreny" target="_blank"><span class="ci">🐙</span><div><div>github.com/iribarreny</div><span class="cl">// dépôt de fond marin</span></div></a>
+        <a class="clink" href="#"><span class="ci">🔱</span><div><div>LinkedIn</div><span class="cl">// réseau de surface</span></div></a>
+      </div>
+      <div>
+        <div class="cvb">
+          <div class="cvbt">📡 émettre_signal()</div>
+          <div class="ff"><label>// identification</label><input type="text" placeholder="votre_nom"></div>
+          <div class="ff"><label>// fréquence retour</label><input type="email" placeholder="votre@email.com"></div>
+          <div class="ff"><label>// objet du signal</label><input type="text" placeholder="sujet_message"></div>
+          <div class="ff"><label>// contenu</label><textarea placeholder="// message en clair..."></textarea></div>
+          <button class="btn btn-cyan" onclick="this.textContent='✓ signal envoyé !';setTimeout(()=>this.textContent='▹ émettre_signal()',2200)">▹ émettre_signal()</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statusbar">
+  <div class="sbi cyan">🐟 deepsea_portfolio.sys</div>
+  <div class="sbi">UTF-8</div>
+  <div class="sbi teal" id="depth-reading">PROFONDEUR: 404m</div>
+  <div class="sbi r depth-indicator" id="sb-page">[ accueil ]</div>
+  <div class="sbi cyan" id="sb-time">--:--</div>
+</div>
+<div class="padb"></div>
+
+
+<script src="js/canvas.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
