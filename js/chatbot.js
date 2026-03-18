@@ -34,7 +34,9 @@
     },
     {
       p: ['compétence','competence','technologie','langage','stack','tech','outil','maîtrise','sait faire','php','python','javascript','sql','html','css','git','mysql','java'],
-      r: () => `Plongée dans ses compétences ! [NAV:competences]\n\n**Programmation :** PHP, Python, JavaScript, Java (POO)\n**Web :** HTML, CSS, architecture MVC\n**Bases de données :** SQL, MySQL, Merise, UML, NoSQL\n**Gestion de projet :** Git, GitHub, Gantt, Kanban\n**Cybersécurité :** RGPD, injections SQL, gestion des accès`
+      r: () => `Plongée dans ses compétences ! [NAV:competences]\n\n**Programmation :** PHP, Python, JavaScript, Java (POO)\n**Web :** HTML, CSS, architecture MVC\n**Bases de données :** SQL, MySQL, Merise, UML, NoSQL\n**Gestion de projet :** Git, GitHub, Gantt, Kanban\n**Cybersécurité :** RGPD, injections SQL, gestion des accès
+**Certification :** SecNumAcadémie ANSSI 2025 🏅
+**Langues :** Anglais B2, Espagnol A2`
     },
     {
       p: ['expérience','experience','travail','emploi','poste','job','professionnel'],
@@ -90,6 +92,22 @@
       r: () => `En **juillet 2025**, Yohan a travaillé chez **TotalEnergies** à Pau. [NAV:cv]\n\nAu Centre Scientifique Jean Féger — tests unitaires et scripts Python.`
     },
     {
+      p: ['github','git hub','code source','depot','dépôt'],
+      r: () => { setTimeout(() => window.open('https://github.com/iribarreny', '_blank'), 150); return `J'ouvre le GitHub de Yohan ! 🐙\n\n**github.com/iribarreny**`; }
+    },
+    {
+      p: ['linkedin','linked in','réseau','network','profil'],
+      r: () => { setTimeout(() => window.open('https://www.linkedin.com/in/yohan-iribarren-99b6b5342', '_blank'), 150); return `J'ouvre le profil LinkedIn de Yohan ! 🔱\n\n**linkedin.com/in/yohan-iribarren**`; }
+    },
+    {
+      p: ['secnum','secnumacademie','anssi','certification','certif','cybersécurité','cyber','sécurité'],
+      r: () => `Yohan a obtenu la certification **SecNumAcadémie** de l'ANSSI en 2025 ! 🏅 [NAV:cv]\n\nFormation nationale en cybersécurité couvrant :\n- Fondamentaux de la sécurité\n- Cryptographie\n- Sécurité des réseaux\n- Gestion des incidents\n\nDélivrée par l'**Agence Nationale de la Sécurité des Systèmes d'Information**.`
+    },
+    {
+      p: ['langue','langues','anglais','espagnol','english','b2','a2','bilingue'],
+      r: () => `Yohan parle plusieurs langues ! 🌐 [NAV:cv]\n\n- 🇬🇧 **Anglais** — niveau B2 (courant) : documentation technique, communication pro\n- 🇪🇸 **Espagnol** — niveau A2 (intermédiaire)\n- 🇫🇷 **Français** — langue maternelle`
+    },
+    {
       p: ['veille','technologique','hôpital','hopital','médical','medical','ia médicale','télémédecine','sante','santé','robotique'],
       r: () => `La veille de Yohan porte sur un sujet qui lui tient à cœur ! [NAV:veille]\n\n**"Comment les nouvelles technologies peuvent faciliter le travail des soignants dans les hôpitaux ?"**\n\nThèmes : IA médicale, télémédecine, robotique, dossier patient électronique.`
     },
@@ -104,6 +122,22 @@
     {
       p: ['qualité','qualite','personnalité','personnalite','caractère','caractere','humain'],
       r: () => `Yohan est **autonome, curieux, investi et réactif**. 🌿\n\nSon parcours de soignant lui a apporté rigueur, empathie et sens du travail en équipe.`
+    },
+    {
+      p: ['intérêt','interet','loisir','hobby','passion','histoire','légende','legende','jeux','jeu','jeux-video','jeux video','gaming'],
+      r: () => `En dehors du code, Yohan a deux grandes passions ! 🎮\n\n🏰 **Histoire & Légendes** — membre actif de l'association, passionné par l'histoire médiévale et les récits mythologiques.\n\n🎮 **Jeux-vidéos** — jeux de rôle, stratégie et jeux narratifs. Une passion qui nourrit la créativité et la logique de développeur !`
+    },
+    {
+      p: ['déploiement','deploiement','hébergement','hebergement','site en ligne','en ligne','netlify','github pages','vercel','url','lien du site','accéder','acceder'],
+      r: () => 'Le portfolio est un site statique, facile à déployer gratuitement ! 🚀\n\n' +
+               '**3 options :**\n\n' +
+               '🟢 **Netlify** — le plus simple\n' +
+               'Glisse le dossier sur netlify.com → URL instantanée\n\n' +
+               '🐙 **GitHub Pages** — si tu as un repo GitHub\n' +
+               'Repo nommé iribarreny.github.io → site automatique\n\n' +
+               '⚡ **Vercel** — le plus rapide\n' +
+               'Connecte ton GitHub sur vercel.com → deploy en 1 clic\n\n' +
+               '💡 Tous sont **gratuits** et fournissent le HTTPS.'
     },
     {
       p: ['merci','super','parfait','génial','genial','top','cool','bravo','bye','au revoir','à bientôt','bonne journee'],
@@ -145,6 +179,7 @@
     { l: '🏗️ Stage Domolandes',     t: 'Stage Domolandes' },
     { l: '🎡 Projet Fâ',            t: 'Projet Fâ' },
     { l: '📊 Ses compétences',      t: 'Ses compétences techniques' },
+    { l: '🎮 Centres d\'intérêts',    t: 'Quels sont ses centres d\'intérêts ?' },
     { l: '📡 Le contacter',         t: 'Comment contacter Yohan ?' },
   ];
 

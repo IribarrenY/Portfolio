@@ -15,17 +15,18 @@ const FILES = {
     '<span class="ts">}</span>',
 
   'skills.txt':
-    'HTML/CSS   <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░</span> 90m\n' +
-    'JavaScript <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░</span> 75m\n' +
-    'PHP        <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░</span> 70m\n' +
-    'Python     <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░</span> 65m\n' +
-    'SQL/MySQL  <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░</span> 80m\n' +
-    'Git        <span class="t-ok">▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░</span> 72m',
+    '<span style="color:var(--cyan-dim);letter-spacing:.08em">// STACK DEPTH CHART ─────────────────</span>\n' +
+    '<span style="color:#00c9aa">HTML/CSS</span>   <span style="color:#00e5ff">[</span><span style="color:#39ff88">██████████████████</span><span style="color:#0e4060">██</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">90m ●●●●●</span>' + '\n' +
+    '<span style="color:#00c9aa">JavaScript</span> <span style="color:#00e5ff">[</span><span style="color:#39ff88">███████████████</span><span style="color:#0e4060">█████</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">75m ●●●●○</span>' + '\n' +
+    '<span style="color:#00c9aa">PHP</span>        <span style="color:#00e5ff">[</span><span style="color:#39ff88">██████████████</span><span style="color:#0e4060">██████</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">70m ●●●●○</span>' + '\n' +
+    '<span style="color:#00c9aa">Python</span>     <span style="color:#00e5ff">[</span><span style="color:#39ff88">█████████████</span><span style="color:#0e4060">███████</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">65m ●●●○○</span>' + '\n' +
+    '<span style="color:#00c9aa">SQL/MySQL</span>  <span style="color:#00e5ff">[</span><span style="color:#39ff88">████████████████</span><span style="color:#0e4060">████</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">80m ●●●●○</span>' + '\n' +
+    '<span style="color:#00c9aa">Git</span>        <span style="color:#00e5ff">[</span><span style="color:#39ff88">██████████████</span><span style="color:#0e4060">██████</span><span style="color:#00e5ff">]</span> <span style="color:#39ff88;font-size:.82em">72m ●●●●○</span>',
 
   'contact.txt':
-    '<span class="ts">sonar  :</span> yohan.iribarren@email.com\n' +
+    '<span class="ts">sonar  :</span> Iribarren.yohan@gmail.com\n' +
     '<span class="ts">pieuvre:</span> github.com/iribarreny\n' +
-    '<span class="ts">surface:</span> linkedin.com/in/yohan-iribarren',
+    '<span class="ts">surface:</span> linkedin.com/in/yohan-iribarren-99b6b5342',
 
   'fish.txt':
     '    <span class="t-info">><(((°></span>  poisson standard\n' +
@@ -38,7 +39,7 @@ const FILES = {
 
   'readme.md':
     '<span class="t-info"># DEEPSEA Portfolio v2.0</span>\n' +
-    '<span class="t-dim">Yohan Iribarren — BTS SIO SLAM 2023/2025</span>\n\n' +
+    '<span class="t-dim">Yohan Iribarren — BTS SIO SLAM 2024/2026 → CESI ing. 2026/2029</span>\n\n' +
     '<span class="ts">Navigation sonar disponible.</span>\n' +
     '<span class="t-dim">Tape help pour les commandes.</span>'
 };
@@ -61,16 +62,19 @@ const CMDS = {
     '  <span class="ts">cd &lt;page&gt;</span>      naviguer (cv, stages...)\n' +
     '  <span class="ts">sudo</span>            accès restreint...\n' +
     '  <span class="ts">neofetch</span>        rapport système\n' +
-    '  <span class="ts">morse &lt;texte&gt;</span>  encoder en morse',
+    '  <span class="ts">morse &lt;texte&gt;</span>  encoder en morse\n  <span class="ts">linkedin</span>        ouvrir le profil LinkedIn\n  <span class="ts">contact</span>         coordonnees + section contact\n  <span class="ts">cv [download]</span>   CV / telecharger PDF\n  <span class="ts">bloupi</span>          invoquer l\'assistant\n  <span class="ts">poisson</span>         inventaire faune marine',
 
   whoami: () =>
     '<span class="ts">Yohan Iribarren</span>\n' +
-    '<span class="t-dim">Ancien aide-soignant reconverti en développeur — BTS SIO SLAM, Lycée Saint-John Perse, Pau.</span>\n' +
-    '<span class="t-info">Profondeur actuelle: 404m | Status: open_to_work | Permis B ✓</span>',
+    '<span class="t-dim">Ancien aide-soignant reconverti en développeur — BTS SIO SLAM 2024/2026.</span>\n' +
+    '<span class="t-dim">Job d\'été Python chez TotalEnergies · Stage 29Studio Paris · Stage Domolandes.</span>\n' +
+    '<span class="t-dim">Admis CESI École d\'ingénieurs — recherche alternance 2026/2029.</span>\n' +
+    '<span class="t-info">Status: alternance_CESI_2026 | Anglais B2 | Permis B ✓</span>\n' +
+    '<span class="t-dim">Passions: Histoire&Légendes · Jeux-vidéos</span>',
 
   ls: () =>
-    '<span class="t-info">total 5 objets repérés au sonar</span>\n' +
-    '<span class="ts">about.json</span>  <span class="ts">skills.txt</span>  <span class="ts">contact.txt</span>  <span class="ts">fish.txt</span>  <span class="ts">readme.md</span>',
+    '<span class="t-info">total 6 objets repérés au sonar</span>\n' +
+    '<span class="ts">about.json</span>  <span class="ts">skills.txt</span>  <span class="ts">contact.txt</span>  <span class="ts">fish.txt</span>  <span class="ts">readme.md</span>  <span class="t-amber">cv.pdf</span>',
 
   pwd: () => '<span class="t-ok">/ocean/deep/portfolio/home</span>',
 
@@ -89,35 +93,102 @@ const CMDS = {
     return '<span class="t-info">PING... </span><span class="t-ok">ECHO REÇU ✓</span>\n<span class="t-dim">Aucun sous-marin ennemi détecté. Portfolio sécurisé.</span>';
   },
 
-  fish: () =>
-    '<span class="t-info">── INVENTAIRE FAUNE MARINE ──</span>\n' +
-    '<span class="ts">><(((°></span>  Poissoncode (domestiqué)\n' +
-    '<span class="t-ok">🐠</span>          Nemo.js (composant React)\n' +
-    '<span class="t-amber">🐡</span>          Fugu SQL (dangereux si mal géré)\n' +
-    '<span class="t-err">🦈</span>          Bug Requin (ennemi principal)\n' +
-    '<span class="ts">🐙</span>          Git-pieuvre (8 branches)\n' +
-    '<span class="t-info">🐋</span>          Docker-baleine (conteneur)',
+  fish: () => FILES['fish.txt'],
 
   clear: () => { termOutput.innerHTML = ''; return null; },
 
-  sudo: () =>
-    '<span class="t-err">[sudo] mot de passe pour yohan:</span>\n' +
-    '<span class="t-err">ACCÈS REFUSÉ — Zone classifiée.</span>\n' +
-    '<span class="t-dim">Les fonds abyssaux ne révèlent pas leurs secrets.</span>',
+  sudo: (args) => {
+    if (args && args.join(' ').replace(/\s/g,'') === 'rm-rf/') {
+      return '<span class="t-err">⚠ ATTENTION — DESTRUCTION TOTALE EN COURS...</span>\n' +
+        '<span class="t-dim">Suppression des fichiers système</span>\n' +
+        '<span class="t-dim">Effacement des commits GitHub...</span>\n' +
+        '<span class="t-dim">Suppression des cafés non consommés...</span>\n' +
+        '<span class="t-dim">Dissolution du portfolio...</span>\n' +
+        '<span class="t-amber">... just kidding 🐟</span>\n' +
+        '<span class="t-ok">Tout va bien. Bloupi veille sur les abysses.</span>';
+    }
+    return '<span class="t-err">[sudo] mot de passe pour yohan:</span>\n' +
+      '<span class="t-err">ACCÈS REFUSÉ — Zone classifiée.</span>\n' +
+      '<span class="t-dim">Les fonds abyssaux ne révèlent pas leurs secrets.</span>';
+  },
 
   neofetch: () =>
     '\n<span class="ts">  ~~~  ~~  ~~~~</span>   <span class="t-ok">yohan</span><span class="t-dim">@</span><span class="t-ok">deepsea</span>\n' +
     '<span class="ts"> ~~ ><(((°> ~~~</span>   ──────────────────────\n' +
     '<span class="ts">  ~~~  ~~  ~~~~</span>   <span class="t-info">OS     :</span> DeepSeaOS 2.0\n' +
-    '                  <span class="t-info">Host   :</span> BTS SIO SLAM — Saint-John Perse, Pau\n' +
+    '                  <span class="t-info">Host   :</span> BTS SIO SLAM \u2192 CESI \u00c9cole d\'ing\u00e9nieurs\n' +
     '                  <span class="t-info">Shell  :</span> sonar-bash 5.1\n' +
+    '                  <span class="t-info">Promo  :</span> 2024/2026 → CESI 2026/2029\n' +
     '                  <span class="t-info">Depth  :</span> 404m\n' +
     '                  <span class="t-info">CPU    :</span> Cerveau x1 (ancien soignant, caféiné)\n' +
     '                  <span class="t-info">Stack  :</span> PHP · Python · SQL · HTML/CSS · Git\n' +
     '                  <span class="t-info">Stages :</span> Domolandes (2025) · 29Studio (2026)\n' +
+    '                  <span class="t-info">Emploi :</span> TotalEnergies (2025) — Job d\'été Python\n' +
+    '                  <span class="t-info">Certif :</span> SecNumAcadémie ANSSI 2025\n' +
+    '                  <span class="t-info">Langues:</span> Anglais B2 · Espagnol A2\n' +
     '                  <span class="t-info">Sonar  :</span> actif ◎\n' +
     '                  <span class="t-info">Faune  :</span> 🐟🐠🐡🦈🐙\n' +
-    '                  <span class="t-info">Status :</span> <span class="t-ok">open_to_work ✓</span>',
+    '                  <span class="t-info">Status :</span> <span class="t-ok">alternance_CESI_2026 ✓</span>',
+
+
+  bloupi: () =>
+    '<span class="t-info">BLOUPI v1.0 — poisson assistant</span>\n' +
+    '<span class="ts">  ><((((°>  </span> Bloup bloup ! Je suis Bloupi,\n' +
+    '<span class="ts">            </span> le gardien des abysses du portfolio.\n' +
+    '<span class="t-dim">  [ STATS ]</span>\n' +
+    '<span class="ts">  Espèce  :</span> <span class="t-ok">Cyprinidé numérique</span>\n' +
+    '<span class="ts">  Habitat :</span> <span class="t-ok">Portfolio de Yohan, -404m</span>\n' +
+    '<span class="ts">  Régime  :</span> <span class="t-ok">Bugs, commits et café</span>\n' +
+    '<span class="ts">  Pouvoir :</span> <span class="t-ok">Ouvrir les projets au clic</span>\n' +
+    '<span class="t-amber">  "Bloup bloup — le code, c\'est de l\'eau !"</span>',
+
+  poisson: () =>
+    '<span class="t-info">INVENTAIRE — FAUNE DU PORTFOLIO</span>\n' +
+    '<span class="ts">  Bloupi       </span> — assistant IA, niveau 99\n' +
+    '<span class="ts">  Nemo.js      </span> — composant React perdu\n' +
+    '<span class="ts">  Fugu.SQL     </span> — dangereux si mal géré\n' +
+    '<span class="ts">  Bug-Requin   </span> — ennemi juré du dev\n' +
+    '<span class="ts">  Git-Pieuvre  </span> — 8 branches en cours\n' +
+    '<span class="t-info">  Docker-Baleine</span> — conteneur XXL\n' +
+    '<span class="t-dim">  Tape <span class="ts">bloupi</span> pour invoquer l\'assistant !</span>',
+
+
+
+
+  cv: (args) => {
+    if (args && args[0] === 'dl' || args && args[0] === 'download') {
+      setTimeout(() => {
+        var a = document.createElement('a');
+        a.href = 'pdf/CV_Iribarren.pdf';
+        a.download = 'CV_Iribarren.pdf';
+        a.click();
+      }, 200);
+      return '<span class="t-ok">Telechargement du CV en cours...</span>\n<span class="t-dim">CV_Iribarren.pdf</span>';
+    }
+    setTimeout(() => { if(typeof showPage === 'function') showPage('cv'); }, 400);
+    return '<span class="t-ok">Navigation vers le CV...</span>\n<span class="t-dim">Astuce : tape <span class="ts">cv download</span> pour telecharger le PDF</span>';
+  },
+
+  contact: () => {
+    setTimeout(() => { if(typeof showPage === 'function') showPage('contact'); }, 400);
+    return '<span class="t-info">// COORDONNEES</span>\n' +
+      '<span class="ts">sonar  :</span> Iribarren.yohan@gmail.com\n' +
+      '<span class="ts">tel    :</span> 06 75 26 72 52\n' +
+      '<span class="ts">github :</span> github.com/iribarreny\n' +
+      '<span class="ts">linkedin:</span> linkedin.com/in/yohan-iribarren-99b6b5342\n' +
+      '<span class="t-ok">Navigation vers Contact...</span>';
+  },
+
+
+  github: () => {
+    setTimeout(() => window.open('https://github.com/iribarreny', '_blank'), 300);
+    return '<span class="t-ok">Ouverture du GitHub...</span>\n<span class="t-dim">github.com/iribarreny</span>';
+  },
+
+  linkedin: () => {
+    setTimeout(() => window.open('https://www.linkedin.com/in/yohan-iribarren-99b6b5342', '_blank'), 300);
+    return '<span class="t-ok">Ouverture du profil LinkedIn...</span>\n<span class="t-dim">linkedin.com/in/yohan-iribarren-99b6b5342</span>';
+  },
 
   morse: (args) => {
     if(!args || !args.length) return '<span class="t-err">usage: morse &lt;texte&gt;</span>';
@@ -149,6 +220,7 @@ function addPromptLine(cmd) {
   termOutput.appendChild(d);
 }
 
+
 function runCommand(raw) {
   const t = raw.trim(); if(!t) return;
   addPromptLine(t);
@@ -158,6 +230,11 @@ function runCommand(raw) {
   if(cmd==='cat') {
     const f=args[0];
     if(!f) { addLine('<span class="t-err">cat: fichier manquant</span>'); return; }
+    if(f==='cv.pdf') {
+      addLine('<span class="t-ok">Ouverture de cv.pdf...</span>\n<span class="t-dim">Téléchargement de CV_Iribarren.pdf</span>');
+      setTimeout(()=>{ var a=document.createElement('a'); a.href='pdf/CV_Iribarren.pdf'; a.download='CV_Iribarren.pdf'; a.click(); }, 300);
+      return;
+    }
     if(FILES[f]) addLine(FILES[f]);
     else addLine('<span class="t-err">cat: ' + esc(f) + ': Aucun objet à cette profondeur</span>');
     return;
@@ -180,7 +257,7 @@ termInput.addEventListener('keydown', e => {
   if(e.key==='Enter')      { const v=termInput.value; termInput.value=''; runCommand(v); }
   else if(e.key==='ArrowUp')   { e.preventDefault(); if(histIdx<cmdHistory.length-1){histIdx++;termInput.value=cmdHistory[histIdx];} }
   else if(e.key==='ArrowDown') { e.preventDefault(); if(histIdx>0){histIdx--;termInput.value=cmdHistory[histIdx];}else{histIdx=-1;termInput.value='';} }
-  else if(e.key==='Tab')       { e.preventDefault(); const v=termInput.value.trim(); const all=[...Object.keys(CMDS),'cat','echo','cd',...Object.keys(FILES)]; const m=all.find(c=>c.startsWith(v)&&c!==v); if(m) termInput.value=m; }
+  else if(e.key==='Tab')       { e.preventDefault(); const v=termInput.value.trim(); const all=[...Object.keys(CMDS),'cat','echo','cd',...Object.keys(FILES),'bloupi','poisson','linkedin','contact','cv','github']; const m=all.find(c=>c.startsWith(v)&&c!==v); if(m) termInput.value=m; }
   else if(e.ctrlKey&&e.key==='l') { e.preventDefault(); termOutput.innerHTML=''; }
 });
 
