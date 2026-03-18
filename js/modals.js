@@ -122,6 +122,9 @@ function strong(txt) { return '<p style="color:var(--foam);font-size:.8rem;font-
   };
 })();
 
+// ═══════════════════════════════════════════
+//  SITE FA
+// ═══════════════════════════════════════════
 MODAL_DATA['sitefa'] = {
   title: '🎡 Projet Site FA',
   body: [
@@ -135,25 +138,37 @@ MODAL_DATA['sitefa'] = {
     '</div>',
 
     buildSep('// contexte'),
-    p('Creation d\'un site web qui permet de gerer les entrées dans le parc via une billeterie en ligne pour gerer l\'affluence grandissante.'),
+    p('Création d\'un site web qui permet de gérer les entrées dans le parc via une billetterie en ligne pour gérer l\'affluence grandissante.'),
 
     buildSep('// notions'),
-    p('Construction de pages Web statiques, navigation entre les pages, mise en place d\'un menu et d\'une horloge.'),
+    p('Construction de pages Web dynamiques avec architecture MVC/DAO, gestion des sessions et des rôles (client / employé / admin), interactions avec la base de données.'),
 
     buildSep('// mise en place du projet'),
-    p('Mise en place d\'un github pour le projet, création d\'une branche de développement, utilisation de commits réguliers pour suivre l\'évolution du projet et faciliter la collaboration.'),
+    p('Mise en place d\'un GitHub pour le projet, création d\'une branche de développement, utilisation de commits réguliers pour suivre l\'évolution et faciliter la collaboration.'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
       logo('logogithub.png','GitHub'),
     '</div>',
-    p('Travail en méthode agile.'),
+    p('Travail en méthode agile — rétrospectives en étoile de mer pour identifier les axes d\'amélioration.'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
-      thumb('etoilefa.PNG','Étoile FA'),
+      thumb('etoilefa.PNG','Rétrospective étoile de mer'),
     '</div>',
 
-    buildSep('// structure'),
+    buildSep('// architecture MVC'),
     p('Mise en place de l\'architecture MVC et DAO pour organiser le code et faciliter la maintenance du site. Utilisation de PHP pour gérer les interactions avec la base de données et générer dynamiquement les pages Web.'),
+
+    strong('Contrôleurs :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
-      thumb('MVCFa.PNG','Architecture MVC'),
+      thumb('fa_mvc_ctrl.png','Contrôleurs FA'),
+    '</div>',
+
+    strong('Modèles :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('fa_mvc_modeles.png','Modèles FA'),
+    '</div>',
+
+    strong('Vues :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('fa_mvc_vues.png','Vues FA'),
     '</div>',
 
     buildSep('// fonctionnalités développées'),
@@ -190,6 +205,18 @@ MODAL_DATA['sitefa'] = {
       thumb('controleurfaconnexion.PNG','Contrôleur connexion 1'),
       thumb('controleurfaconnexion2.PNG','Contrôleur connexion 2'),
     '</div>',
+	
+    strong('Modèle — Compte.php :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('compte_php_1.png', 'Compte.php — partie 1'),
+      thumb('compte_php_2.png', 'Compte.php — partie 2'),
+    '</div>',
+    strong('Modèle — CompteDAO.php :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('comptedao_php_1.png', 'CompteDAO.php — partie 1'),
+      thumb('comptedao_php_2.png', 'CompteDAO.php — partie 2'),
+      thumb('comptedao_php_3.png', 'CompteDAO.php — partie 3'),
+    '</div>',
     strong('Visuel client :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
       thumb('connexionclient.PNG','Connexion client'),
@@ -207,14 +234,17 @@ MODAL_DATA['sitefa'] = {
     buildSep('// compétences'),
     buildUl([
       '1.3 — Développement de la présence en ligne de l\'organisation',
-      '1.3.1 — Valorisation de l\'image sur les médias numériques',
-      '1.6 — Organisation de son développement professionnel',
-      '1.6.3 — Gérer son identité professionnelle',
-      '1.6.4 — Développer son projet professionnel'
+      '1.4 — Travail en mode projet (méthode Agile)',
+      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO)',
+      '2.3 — Gestion des données (SQL, base de données relationnelle)',
+      '1.6 — Organisation de son développement professionnel'
     ])
   ].join('')
 };
 
+// ═══════════════════════════════════════════
+//  DOMOLANDES
+// ═══════════════════════════════════════════
 MODAL_DATA['domolandes'] = {
   title: '🏗️ Stage de 1ère année — Domolandes',
   body: [
@@ -249,35 +279,87 @@ MODAL_DATA['domolandes'] = {
   ].join('')
 };
 
+// ═══════════════════════════════════════════
+//  29STUDIO
+// ═══════════════════════════════════════════
 MODAL_DATA['studio29'] = {
   title: '📸 Stage de 2ème année — 29Studio',
   body: [
     '<div class="cmeta"><span>Janvier – Février 2026</span> · Paris</div>',
+
     buildSep('// l\'entreprise'),
-    p('Entreprise de shooting photos créé en 2025, basé à Paris. Spécialisé dans la production dans le domaine du luxe. Dirigé par Mme. Delage Karine.'),
+    p('Entreprise de shooting photos créée en 2025, basée à Paris. Spécialisée dans la production dans le domaine du luxe. Dirigée par Mme Delage Karine.'),
+
     buildSep('// objectifs'),
     buildUl([
-      'Création d\'un site de gestion de factures et de projets pour une agence de communication',
-      'Développement d\'une interface simple et efficace pour les utilisateurs'
+      'Création d\'un site de gestion de fournisseurs, clients et projets pour une agence de communication',
+      'Développement d\'une interface complète en architecture MVC/DAO avec couche de sécurité',
+      'Mise en place de tests unitaires PHPUnit pour fiabiliser l\'application'
     ]),
-    buildSep('// missions'),
+
+    buildSep('// github &amp; versioning'),
+    p('Projet versionné sur GitHub en équipe. 92 commits au total, 2 branches actives. Gestion des pull requests et intégration continue.'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('studio29_github.png','Dépôt GitHub 29Studio — 92 commits, 9 contributeurs'),
+    '</div>',
+
+    buildSep('// base de données'),
+    p('Conception et implémentation d\'une base de données relationnelle complète : Entreprises, Clients, Fournisseurs, Projets, Documents, Factures, Membres, Tournées, Étapes, Calendrier, Notifications et droits d\'accès.'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('29Studio_BDD.png','Schéma complet de la base de données'),
+    '</div>',
+
+    buildSep('// architecture MVC/DAO'),
+    p('Architecture MVC complète avec couche DAO dédiée pour chaque entité métier. Séparation claire des responsabilités entre contrôleurs, modèles et vues.'),
+
+    strong('Contrôleurs :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('studio29_mvc_1.png','Liste des contrôleurs 29Studio'),
+    '</div>',
+
+    strong('Modèles :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('studio29_mvc_2.png','Modèles 29Studio — partie 1'),
+      thumb('studio29_mvc_3.png','Modèles 29Studio — partie 2'),
+      thumb('studio29_mvc_4.png','Modèles 29Studio — partie 3'),
+    '</div>',
+
+    strong('Vues :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+      thumb('studio29_mvc_5.png','Liste des vues 29Studio'),
+    '</div>',
+
+    buildSep('// missions réalisées'),
     cyan('Analyse des besoins'),
-    p('Recueillir les besoins auprès de l\'équipe. Identifier les fonctionnalités clés du site. <em>Outils : Docker, navigateur web</em>'),
+    p('Recueil des besoins auprès de l\'équipe. Identification des fonctionnalités clés : fournisseurs, clients, projets, factures, documents, tournées. <em>Outils : réunions d\'équipe, Google Docs</em>'),
     cyan('Conception de l\'application'),
-    p('Analyse des données nécessaires pour la gestion des factures et des projets. Conception d\'une base de données adaptée à l\'aide d\'un diagramme MCD. <em>Outils : Google Docs</em>'),
+    p('Modélisation UML des classes métier. Conception de la BDD avec MCD. Définition de l\'architecture MVC/DAO. <em>Outils : MySQL Workbench, Google Docs</em>'),
     cyan('Développement du site web'),
-    p('Développement d\'une interface utilisateur intuitive. Intégration des fonctionnalités de création, modification et suppression de factures et projets. Mise en place de TNR. <em>Outils : Bloc-notes, documentation interne</em>'),
+    p('Développement d\'une interface utilisateur complète. Intégration des fonctionnalités CRUD pour toutes les entités. <em>Outils : VSCode, Docker, GitHub</em>'),
+    cyan('Tests et sécurité'),
+    p('Mise en place de PHPUnit pour les tests unitaires. Authentification sécurisée (password_hash / password_verify). Gestion des rôles et droits d\'accès par projet. CAPTCHA anti-robot.'),
+
     buildSep('// compétences'),
-    buildUl(['Analyse des besoins','Gestion de versions à l\'aide de GitHub','Conception et développement d\'interfaces web en DAO et MVC','Utilisation de TNR pour la sécurité et la fiabilité du site']),
+    buildUl([
+      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO complet)',
+      '2.3 — Gestion des données (BDD relationnelle, 15+ tables, triggers)',
+      '1.5 — Mise à disposition des utilisateurs (tests PHPUnit, déploiement Docker)',
+      '1.4 — Travail en mode projet (GitHub et 92 commits)',
+      '3.5 — Cyber sécurisation (authentification, hachage, rôles, CAPTCHA)',
+      '2.2 — Maintenance corrective et évolutive (intégration continue, versioning)'
+    ]),
+
     buildSep('// difficultés &amp; solutions'),
     buildUl([
-      'Gestion de document sur un site → autoformation',
-      'Changement dans les exigences du projet → autoformation rapide',
-      'Contrainte d\'un utilisateur dans la base de données → adaptation de la structure de la base'
+      'Gestion de documents complexes → architecture documentaire dédiée',
+      'Évolution des exigences → adaptation agile et commits fréquents',
+      'Contrainte d\'unicité en BDD → refactoring avec triggers SQL',
+      'BDD complexe (15+ tables liées) → modélisation MCD rigoureuse en amont'
     ]),
+
     buildSep('// bilan'),
-    p('Développement de compétences techniques et organisationnelles. Expérience enrichissante dans un environnement professionnel stimulant.'),
-    buildTags(['MVC','DAO','GitHub','TNR'])
+    p('Expérience très enrichissante dans un environnement professionnel stimulant. Développement de compétences techniques avancées (MVC/DAO complet, PHPUnit, Docker) et travail en équipe réelle avec 9 contributeurs et 92 commits GitHub.'),
+    buildTags(['PHP','MVC','DAO','PHPUnit','GitHub','Docker','MySQL'])
   ].join('')
 };
 

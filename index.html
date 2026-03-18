@@ -3,9 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yohan Iribarren — Deep Sea Terminal</title>
+<title>Portfolio - Yohan IRIBARREN</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* ═══════════════════════════════════════════
+   THÈME OCÉAN LUMINEUX
+═══════════════════════════════════════════ */
+body.ocean-light {
+  --abyss:    #bce8f5;
+  --deep:     #a8dcee;
+  --mid:      #90d0e8;
+  --surface:  #76c6e0;
+  --panel:    #b4e2f2;
+  --panel2:   #9fd5ea;
+  --border:   #7acde0;
+  --border2:  #3ab0cc;
+  --cyan:     #0077aa;
+  --cyan-dim: #005f8a;
+  --teal:     #007a6a;
+  --teal-dim: #005a4d;
+  --green:    #007a3d;
+  --green-dim:#005a2d;
+  --amber:    #b06000;
+  --red:      #cc2222;
+  --foam:     #003850;
+  --foam-dim: #1a5570;
+  --text:     #002a3a;
+  --text-dim: #1a5060;
+  --muted:    #2a7090;
+  --glow-c:   rgba(0,119,170,0.12);
+  --glow-t:   rgba(0,122,106,0.10);
+}
+
+/* Fond lumineux dégradé */
+body.ocean-light {
+  background: linear-gradient(160deg, #9ed4ea 0%, #b4e2f2 40%, #88c8e0 100%);
+}
+
+/* Scanlines moins intenses en mode clair */
+body.ocean-light::after {
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(0,119,170,0.025) 3px, rgba(0,119,170,0.025) 4px
+  );
+}
+
+/* Vignette plus douce */
+body.ocean-light::before {
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(160,220,240,0.5) 100%);
+}
+
+/* Nav en mode clair */
+body.ocean-light nav {
+  background: rgba(155,215,240,0.92);
+  border-bottom-color: #7acde0;
+  box-shadow: 0 1px 20px rgba(0,119,170,0.12);
+}
+
+/* Scrollbar */
+body.ocean-light ::-webkit-scrollbar-track { background: var(--deep); }
+body.ocean-light ::-webkit-scrollbar-thumb { background: var(--border2); }
+
+/* Cards */
+body.ocean-light .card {
+  box-shadow: inset 0 0 30px rgba(160,220,240,0.3), 0 2px 8px rgba(0,100,150,0.08);
+}
+body.ocean-light .card:hover {
+  box-shadow: 0 0 20px rgba(0,119,170,0.12), inset 0 0 30px rgba(160,220,240,0.3);
+}
+
+/* Status bar */
+body.ocean-light .statusbar {
+  background: #9fd5ea;
+  border-top-color: #7acde0;
+}
+
+/* Inputs contact */
+body.ocean-light .ff input,
+body.ocean-light .ff textarea {
+  background: #bce8f5;
+  border-color: #7acde0;
+  color: #002a3a;
+}
+body.ocean-light .ff input::placeholder,
+body.ocean-light .ff textarea::placeholder { color: #5a9aaa; }
+
+/* cvb panels */
+body.ocean-light .cvb {
+  box-shadow: inset 0 0 30px rgba(160,220,240,0.3);
+}
+
+/* Bouton toggle thème */
+#theme-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  transition: color .2s, border-color .2s, background .2s;
+  white-space: nowrap;
+}
+#theme-toggle:hover {
+  border-color: var(--cyan-dim);
+  color: var(--cyan);
+  background: rgba(0,229,255,0.05);
+}
+body.ocean-light #theme-toggle:hover {
+  background: rgba(0,119,170,0.07);
+}
+
+/* Icône toggle */
+.theme-icon {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+#theme-toggle:hover .theme-icon { transform: rotate(20deg) scale(1.15); }
+
+/* Bloupi chatbot en mode clair */
+body.ocean-light #bloupi-btn {
+  background: linear-gradient(135deg, #b8e8f5 60%, #a0d8ec);
+  border-color: #007a6a;
+  box-shadow: 0 0 18px rgba(0,122,106,0.3), 0 0 40px rgba(0,119,170,0.1);
+}
+body.ocean-light #bloupi-win {
+  background: linear-gradient(160deg, #b4e2f2 0%, #9ed4ea 60%, #aadcea 100%);
+  border-color: #7acde0;
+  box-shadow: 0 8px 48px rgba(0,80,120,0.2), 0 0 0 1px rgba(0,119,170,0.1);
+}
+body.ocean-light .bloupi-header {
+  background: linear-gradient(90deg, #9fd5ea, #b4e2f2);
+  border-bottom-color: #7acde0;
+}
+body.ocean-light .bloupi-msg-user .bloupi-bubble {
+  background: linear-gradient(135deg, #90cce4, #a8dcee);
+  border-color: #7acde0;
+  color: #002a3a;
+}
+body.ocean-light .bloupi-msg-bot .bloupi-bubble {
+  background: linear-gradient(135deg, #b4e2f2, #9ed4ea);
+  border-color: rgba(0,122,106,0.3);
+  color: #002a3a;
+}
+body.ocean-light .bloupi-bubble strong { color: #0077aa; }
+body.ocean-light .bloupi-bubble em     { color: #007a6a; }
+body.ocean-light #bloupi-input {
+  background: rgba(150,210,235,0.7);
+  border-color: #7acde0;
+  color: #002a3a;
+  caret-color: #0077aa;
+}
+body.ocean-light .bloupi-sug {
+  background: rgba(150,210,235,0.8);
+  border-color: #7acde0;
+  color: #1a5060;
+}
+body.ocean-light .bloupi-sug:hover {
+  background: rgba(0,122,106,0.1);
+  border-color: #007a6a;
+  color: #0077aa;
+}
+body.ocean-light .bloupi-input-area {
+  background: rgba(140,200,225,0.4);
+  border-top-color: #7acde0;
+}
+body.ocean-light .bloupi-suggestions {
+  border-top-color: rgba(122,205,224,0.5);
+}
+
+/* Transition globale douce */
+body, body * {
+  transition: background-color .35s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/* ── ALGUES MODE LUMINEUX ── */
+body.ocean-light .algae path {
+  stroke-opacity: 1 !important;
+  filter: drop-shadow(0 0 3px rgba(0,120,90,0.4));
+}
+body.ocean-light .algae:nth-child(1) path { stroke: #007a5a; stroke-width: 3; }
+body.ocean-light .algae:nth-child(2) path { stroke: #0077aa; stroke-width: 2.5; }
+body.ocean-light .algae:nth-child(3) path { stroke: #007a5a; stroke-width: 3; }
+body.ocean-light .algae:nth-child(4) path { stroke: #1a9a40; stroke-width: 2.5; }
+
+</style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">emailjs.init("cdiVKbaVGyjEQ7_FZ");</script>
 </head>
 <body>
 
@@ -27,16 +221,21 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="showPage('home')">DEEP<span>SEA</span>.sys</div>
+  <div class="nav-logo" onclick="showPage('home')">Yohan <span>IRIBARREN</span></div>
   <ul class="nav-tabs">
-    <li><a onclick="showPage('home')"        id="nav-home"        class="active"><span class="tn">00</span>🐟 accueil</a></li>
-    <li><a onclick="showPage('cv')"          id="nav-cv"         ><span class="tn">01</span>📋 cv</a></li>
-    <li><a onclick="showPage('ateliers')"    id="nav-ateliers"   ><span class="tn">02</span>🔧 ateliers</a></li>
-    <li><a onclick="showPage('stages')"      id="nav-stages"     ><span class="tn">03</span>🦑 stages</a></li>
-    <li><a onclick="showPage('veille')"      id="nav-veille"     ><span class="tn">04</span>🔭 veille</a></li>
-    <li><a onclick="showPage('competences')" id="nav-competences"><span class="tn">05</span>⚓ skills</a></li>
-    <li><a onclick="showPage('contact')"     id="nav-contact"    ><span class="tn">06</span>📡 contact</a></li>
+    <li><a onclick="showPage('home')"        id="nav-home"        class="active">🐟 accueil</a></li>
+    <li><a onclick="showPage('cv')"          id="nav-cv"         >📋 cv</a></li>
+    <li><a onclick="showPage('ateliers')"    id="nav-ateliers"   >🔧 ateliers</a></li>
+    <li><a onclick="showPage('stages')"      id="nav-stages"     >🦑 stages</a></li>
+    <li><a onclick="showPage('veille')"      id="nav-veille"     >🔭 veille</a></li>
+    <li><a onclick="showPage('competences')" id="nav-competences">⚓ skills</a></li>
+    <li><a onclick="showPage('contact')"     id="nav-contact"    >📡 contact</a></li>
   </ul>
+
+  <button id="theme-toggle" onclick="toggleTheme()" title="Basculer le thème">
+    <span class="theme-icon" id="theme-icon">🌑</span>
+    <span id="theme-label">abyssal</span>
+  </button>
 </nav>
 
 <!-- ═══════════ HOME ═══════════ -->
@@ -78,7 +277,7 @@
 <!-- ═══════════ CV ═══════════ -->
 <section class="page" id="cv">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 01 ]</span><h2 class="stitle">CURRICULUM VITAE</h2><div class="sline"></div><span class="sicon">📋</span></div>
+    <div class="sh"><h2 class="stitle">CURRICULUM VITAE</h2><div class="sline"></div><span class="sicon">📋</span></div>
     <div class="cv-cols">
       <div class="cvb">
         <div class="cvbt">📋 informations et coordonnées</div>
@@ -102,6 +301,11 @@
       </div>
       <div class="cvb">
         <div class="cvbt">💼 expériences professionnelles</div>
+        <div class="cvi">
+          <div class="cvit">Stage développement — 29Studio</div>
+          <div class="cvis">Janvier – Février 2026</div>
+          <div class="cvid">2ème arrondissement, Paris<br>· Création d'un site de gestion de projets, factures et tournées<br>· Mise en place de TNR (Tests Non-Régressifs)<br>· Sécurisation : gestion des accès utilisateurs, protection injections SQL<br>· Documentation technique et utilisateur</div>
+        </div>
         <div class="cvi"><div class="cvit">Développeur Python — TotalEnergies</div><div class="cvis">Juillet 2025</div><div class="cvid">Centre Scientifique et Technique Jean Féger, Pau<br>· Mise en place de tests unitaires sur une application existante<br>· Simplifications de scripts Python</div></div>
         <div class="cvi"><div class="cvit">Stage de développement — Laboratoire de recherche</div><div class="cvis">Juin 2025</div><div class="cvid">Domolandes, Saint-Geours-de-Maremne<br>· Audit d'un site existant et élaboration d'un plan de remédiation</div></div>
         <div class="cvi"><div class="cvit">Aide-Soignant</div><div class="cvis">2020 – 2024</div><div class="cvid">Différentes structures de Pau et Bayonne<br>· Travail de jour et de nuit<br>· Public : Personnes âgées, personnes en situation d'handicap, troubles cognitifs</div></div>
@@ -122,7 +326,7 @@
 <!-- ═══════════ ATELIERS ═══════════ -->
 <section class="page" id="ateliers">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 02 ]</span><h2 class="stitle">ATELIERS PRO</h2><div class="sline"></div><span class="sicon">🔧</span></div>
+    <div class="sh"><h2 class="stitle">ATELIERS PRO</h2><div class="sline"></div><span class="sicon">🔧</span></div>
     <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Mises en situation professionnelles — cliquez sur un projet pour le détailler.</div>
 
     <div class="depth-section">// 1ère année — semestre 1</div>
@@ -194,7 +398,7 @@
 <!-- ═══════════ STAGES ═══════════ -->
 <section class="page" id="stages">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 03 ]</span><h2 class="stitle">STAGES</h2><div class="sline"></div><span class="sicon">🦑</span></div>
+    <div class="sh"><h2 class="stitle">STAGES</h2><div class="sline"></div><span class="sicon">🦑</span></div>
     <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Immersions professionnelles — cliquez sur un stage pour le détailler.</div>
 
     <div class="card card-clickable" style="margin-bottom:1.5rem" onclick="openModal('domolandes')">
@@ -216,7 +420,7 @@
 <!-- ═══════════ VEILLE ═══════════ -->
 <section class="page" id="veille">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 04 ]</span><h2 class="stitle">VEILLE TECH</h2><div class="sline"></div><span class="sicon">🔭</span></div>
+    <div class="sh"><h2 class="stitle">VEILLE TECH</h2><div class="sline"></div><span class="sicon">🔭</span></div>
     <div class="cq" style="margin-bottom:2rem"><em>/* Sonar actif — Nouvelles technologies &amp; facilitation du travail des soignants. */</em></div>
 
     <div class="card" style="margin-bottom:1.5rem">
@@ -243,7 +447,7 @@
 <!-- ═══════════ COMPETENCES ═══════════ -->
 <section class="page" id="competences">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 05 ]</span><h2 class="stitle">DEPTH METER</h2><div class="sline"></div><span class="sicon">⚓</span></div>
+    <div class="sh"><h2 class="stitle">DEPTH METER</h2><div class="sline"></div><span class="sicon">⚓</span></div>
     <div class="cq" style="margin-bottom:2rem"><em>// log :</em> Cliquez sur une compétence pour dérouler la liste.</div>
 
     <!-- BLOC 1 -->
@@ -365,7 +569,7 @@
 <!-- ═══════════ CONTACT ═══════════ -->
 <section class="page" id="contact">
   <div class="sw">
-    <div class="sh"><span class="snum">[ 06 ]</span><h2 class="stitle">SIGNAL CONTACT</h2><div class="sline"></div><span class="sicon">📡</span></div>
+    <div class="sh"><h2 class="stitle">SIGNAL CONTACT</h2><div class="sline"></div><span class="sicon">📡</span></div>
     <div class="clayout">
       <div>
         <div class="cq" style="margin-bottom:1.4rem;font-size:0.78rem">
@@ -383,11 +587,12 @@
       <div>
         <div class="cvb">
           <div class="cvbt">📡 émettre_signal()</div>
-          <div class="ff"><label>// identification</label><input type="text" placeholder="votre_nom"></div>
-          <div class="ff"><label>// fréquence retour</label><input type="email" placeholder="votre@email.com"></div>
-          <div class="ff"><label>// objet du signal</label><input type="text" placeholder="sujet_message"></div>
-          <div class="ff"><label>// contenu</label><textarea placeholder="// message en clair..."></textarea></div>
-          <button class="btn btn-cyan" onclick="this.textContent='✓ signal envoyé !';setTimeout(()=>this.textContent='▹ émettre_signal()',2200)">▹ émettre_signal()</button>
+          <div class="ff"><label>// identification</label><input id="contact-name" type="text" placeholder="votre_nom"></div>
+          <div class="ff"><label>// fréquence retour</label><input id="contact-email" type="email" placeholder="votre@email.com"></div>
+          <div class="ff"><label>// objet du signal</label><input id="contact-subject" type="text" placeholder="sujet_message"></div>
+          <div class="ff"><label>// contenu</label><textarea id="contact-message" placeholder="// message en clair..."></textarea></div>
+          <div id="contact-status" style="font-size:12px;min-height:18px;margin-bottom:6px;"></div>
+          <button id="contact-btn" class="btn btn-cyan" onclick="sendContactForm()">▹ émettre_signal()</button>
         </div>
       </div>
     </div>
@@ -396,7 +601,7 @@
 
 <!-- STATUS BAR -->
 <div class="statusbar">
-  <div class="sbi cyan">🐟 deepsea_portfolio.sys</div>
+  <div class="sbi cyan">🐟 Yohan Iribarren</div>
   <div class="sbi">UTF-8</div>
   <div class="sbi teal" id="depth-reading">PROFONDEUR: 404m</div>
   <div class="sbi r depth-indicator" id="sb-page">[ accueil ]</div>
@@ -409,5 +614,82 @@
 <script src="js/terminal.js"></script>
 <script src="js/modals.js"></script>
 <script src="js/main.js"></script>
+<script src="js/chatbot.js"></script>
+
+<script>
+function sendContactForm() {
+  var name    = document.getElementById('contact-name').value.trim();
+  var email   = document.getElementById('contact-email').value.trim();
+  var subject = document.getElementById('contact-subject').value.trim();
+  var message = document.getElementById('contact-message').value.trim();
+  var btn     = document.getElementById('contact-btn');
+  var status  = document.getElementById('contact-status');
+
+  if (!name || !email || !subject || !message) {
+    status.style.color = '#ff4444';
+    status.textContent = '⚠ tous les champs sont requis.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ transmission en cours...';
+  status.style.color = '#00c9aa';
+  status.textContent = '// envoi du signal...';
+
+  emailjs.send('default_service', 'template_m19s8nx', {
+    name:     name,
+    email:    email,
+    subject:  subject,
+    message:  message,
+    reply_to: email
+  }).then(function() {
+    btn.textContent = '✓ signal transmis !';
+    status.style.color = '#39ff88';
+    status.textContent = '// message reçu. Yohan vous répondra sous 24h. 🐟';
+    document.getElementById('contact-name').value    = '';
+    document.getElementById('contact-email').value   = '';
+    document.getElementById('contact-subject').value = '';
+    document.getElementById('contact-message').value = '';
+    setTimeout(function() {
+      btn.disabled = false;
+      btn.textContent = '▹ émettre_signal()';
+      status.textContent = '';
+    }, 4000);
+  }, function(error) {
+    btn.disabled = false;
+    btn.textContent = '▹ émettre_signal()';
+    status.style.color = '#ff4444';
+    status.textContent = '⚠ erreur de transmission. Réessayez ou contactez directement par email.';
+    console.error('EmailJS error:', error);
+  });
+}
+</script>
+
+<script>
+(function() {
+  var saved = localStorage.getItem('theme');
+  // Par défaut : mode clair — sauf si l'utilisateur a explicitement choisi le mode sombre
+  if (saved !== 'dark') {
+    document.body.classList.add('ocean-light');
+    document.getElementById('theme-icon').textContent  = '🌑';
+    document.getElementById('theme-label').textContent = 'abyssal';
+  }
+})();
+
+function toggleTheme() {
+  var isLight = document.body.classList.toggle('ocean-light');
+  var icon  = document.getElementById('theme-icon');
+  var label = document.getElementById('theme-label');
+  if (isLight) {
+    icon.textContent  = '🌑';
+    label.textContent = 'abyssal';
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.textContent  = '☀️';
+    label.textContent = 'lumineux';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+</script>
 </body>
 </html>
