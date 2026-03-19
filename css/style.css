@@ -826,7 +826,8 @@ nav {
   #bloupi-input { font-size: 11px; padding: 7px 10px; }
 
   /* Particules modals désactivées sur mobile pour performance */
-  #modal-canvas { display: none; }
+  /* #modal-canvas activé sur mobile */
+  #modal-canvas { opacity: 0.3; }
 
   /* Status bar encore plus compacte */
   .statusbar { gap: 0.5rem; padding: 0 0.5rem; height: 22px; }

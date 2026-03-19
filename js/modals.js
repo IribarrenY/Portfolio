@@ -99,7 +99,7 @@ function logo(src, alt) {
   return '<img src="img/' + src + '" alt="' + (alt||'') + '" style="height:40px;width:auto;border-radius:4px;object-fit:contain;">';
 }
 function thumb(src, alt) {
-  return '<div onclick="openLightbox(\'img/' + src + '\')" style="position:relative;display:inline-block;width:220px;height:130px;margin:.3rem;cursor:pointer;border-radius:6px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;transition:border-color .2s;" onmouseover="this.style.borderColor=\'var(--cyan)\';this.querySelector(\'.thumb-hint\').style.opacity=\'1\'" onmouseout="this.style.borderColor=\'var(--border)\';this.querySelector(\'.thumb-hint\').style.opacity=\'0\'">'
+  return '<div onclick="openLightbox(\'img/' + src + '\')" style="position:relative;display:inline-block;width:min(220px,calc(50vw - 2rem));height:120px;margin:.3rem;cursor:pointer;border-radius:6px;overflow:hidden;border:1px solid var(--border);flex-shrink:0;transition:border-color .2s;" onmouseover="this.style.borderColor=\'var(--cyan)\';this.querySelector(\'.thumb-hint\').style.opacity=\'1\'" onmouseout="this.style.borderColor=\'var(--border)\';this.querySelector(\'.thumb-hint\').style.opacity=\'0\'">'
     + '<img src="img/' + src + '" alt="' + (alt||'') + '" style="width:100%;height:100%;object-fit:cover;display:block;">'
     + '<div class="thumb-hint" style="position:absolute;inset:0;background:rgba(2,13,20,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;font-size:.7rem;color:var(--cyan);letter-spacing:.06em;text-align:center;pointer-events:none;">🔍 Cliquer pour agrandir</div>'
     + '</div>';
@@ -145,11 +145,11 @@ MODAL_DATA['sitefa'] = {
 
     buildSep('// mise en place du projet'),
     p('Mise en place d\'un GitHub pour le projet, création d\'une branche de développement, utilisation de commits réguliers pour suivre l\'évolution et faciliter la collaboration.'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       logo('logogithub.png','GitHub'),
     '</div>',
     p('Travail en méthode agile — rétrospectives en étoile de mer pour identifier les axes d\'amélioration.'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('etoilefa.PNG','Rétrospective étoile de mer'),
     '</div>',
 
@@ -157,35 +157,35 @@ MODAL_DATA['sitefa'] = {
     p('Mise en place de l\'architecture MVC et DAO pour organiser le code et faciliter la maintenance du site. Utilisation de PHP pour gérer les interactions avec la base de données et générer dynamiquement les pages Web.'),
 
     strong('Contrôleurs :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('fa_mvc_ctrl.png','Contrôleurs FA'),
     '</div>',
 
     strong('Modèles :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('fa_mvc_modeles.png','Modèles FA'),
     '</div>',
 
     strong('Vues :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('fa_mvc_vues.png','Vues FA'),
     '</div>',
 
     buildSep('// fonctionnalités développées'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('accueilfa.PNG','Accueil'),
       thumb('connexionscreen.PNG','Page de connexion'),
     '</div>',
 
     strong('Admin :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('commandeadmin.PNG','Commandes admin'),
       thumb('toutescommandesfa.PNG','Toutes les commandes'),
       thumb('commandefutureadmin.PNG','Commandes futures admin'),
     '</div>',
 
     strong('Client :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('connexionclient.PNG','Connexion client'),
       thumb('fasejourclientcommander.PNG','Commander un séjour'),
       thumb('clientcommandefa.PNG','Commandes client'),
@@ -193,40 +193,40 @@ MODAL_DATA['sitefa'] = {
 
     buildSep('// exemple de fonctionnalité : connexion'),
     strong('Page de connexion — Visuel :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('connexionscreen.PNG','Visuel connexion'),
     '</div>',
     strong('Vue :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('connexioncodescreen.PNG','Code vue connexion'),
     '</div>',
     strong('Contrôleur :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('controleurfaconnexion.PNG','Contrôleur connexion 1'),
       thumb('controleurfaconnexion2.PNG','Contrôleur connexion 2'),
     '</div>',
 	
     strong('Modèle — Compte.php :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('compte_php_1.png', 'Compte.php — partie 1'),
       thumb('compte_php_2.png', 'Compte.php — partie 2'),
     '</div>',
     strong('Modèle — CompteDAO.php :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('comptedao_php_1.png', 'CompteDAO.php — partie 1'),
       thumb('comptedao_php_2.png', 'CompteDAO.php — partie 2'),
       thumb('comptedao_php_3.png', 'CompteDAO.php — partie 3'),
     '</div>',
     strong('Visuel client :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('connexionclient.PNG','Connexion client'),
     '</div>',
     strong('Visuel admin :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('connexionadmin.PNG','Connexion admin'),
     '</div>',
     strong('Index.php :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('indexfa.PNG','Index FA 1'),
       thumb('indexfa2.PNG','Index FA 2'),
     '</div>',
@@ -299,13 +299,13 @@ MODAL_DATA['studio29'] = {
 
     buildSep('// github &amp; versioning'),
     p('Projet versionné sur GitHub en équipe. 92 commits au total, 2 branches actives. Gestion des pull requests et intégration continue.'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('studio29_github.png','Dépôt GitHub 29Studio — 92 commits, 9 contributeurs'),
     '</div>',
 
     buildSep('// base de données'),
     p('Conception et implémentation d\'une base de données relationnelle complète : Entreprises, Clients, Fournisseurs, Projets, Documents, Factures, Membres, Tournées, Étapes, Calendrier, Notifications et droits d\'accès.'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('29Studio_BDD.png','Schéma complet de la base de données'),
     '</div>',
 
@@ -313,19 +313,19 @@ MODAL_DATA['studio29'] = {
     p('Architecture MVC complète avec couche DAO dédiée pour chaque entité métier. Séparation claire des responsabilités entre contrôleurs, modèles et vues.'),
 
     strong('Contrôleurs :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('studio29_mvc_1.png','Liste des contrôleurs 29Studio'),
     '</div>',
 
     strong('Modèles :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('studio29_mvc_2.png','Modèles 29Studio — partie 1'),
       thumb('studio29_mvc_3.png','Modèles 29Studio — partie 2'),
       thumb('studio29_mvc_4.png','Modèles 29Studio — partie 3'),
     '</div>',
 
     strong('Vues :'),
-    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0">',
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
       thumb('studio29_mvc_5.png','Liste des vues 29Studio'),
     '</div>',
 

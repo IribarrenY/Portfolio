@@ -62,7 +62,15 @@ const CMDS = {
     '  <span class="ts">cd &lt;page&gt;</span>      naviguer (cv, stages...)\n' +
     '  <span class="ts">sudo</span>            accès restreint...\n' +
     '  <span class="ts">neofetch</span>        rapport système\n' +
-    '  <span class="ts">morse &lt;texte&gt;</span>  encoder en morse\n  <span class="ts">linkedin</span>        ouvrir le profil LinkedIn\n  <span class="ts">contact</span>         coordonnees + section contact\n  <span class="ts">cv [download]</span>   CV / telecharger PDF\n  <span class="ts">bloupi</span>          invoquer l\'assistant\n  <span class="ts">poisson</span>         inventaire faune marine',
+    '  <span class="ts">morse &lt;texte&gt;</span>  encoder en morse\n' +
+    '  <span class="t-dim">── navigation ──────────────────────</span>\n' +
+    '  <span class="ts">cv [download]</span>   voir CV / télécharger PDF\n' +
+    '  <span class="ts">contact</span>         coordonnées + section contact\n' +
+    '  <span class="ts">github</span>          ouvrir github.com/iribarreny\n' +
+    '  <span class="ts">linkedin</span>        ouvrir le profil LinkedIn\n' +
+    '  <span class="t-dim">── secrets ─────────────────────────</span>\n' +
+    '  <span class="ts">bloupi</span>          invoquer l\'assistant 🐟\n' +
+    '  <span class="ts">poisson</span>         inventaire faune marine',
 
   whoami: () =>
     '<span class="ts">Yohan Iribarren</span>\n' +
