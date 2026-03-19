@@ -101,6 +101,8 @@ body.ocean-light .btn-dl { background:rgba(180,100,0,0.08);color:#b06000;border-
 
 /* Modal canvas */
 #modal-canvas { position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;border-radius:10px;z-index:0;opacity:0.55; }
+/* Sticky header au-dessus du canvas */
+#modal-box > div[style*="sticky"] { z-index:10 !important; }
 body.ocean-light #modal-canvas{opacity:0.35;}
 #modal-box{position:fixed !important;overflow-y:auto !important;overflow-x:hidden !important;-webkit-overflow-scrolling:touch;}
 #modal-box > *:not(#modal-canvas){position:relative;z-index:1;}
