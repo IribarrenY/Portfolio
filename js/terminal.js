@@ -129,7 +129,7 @@ const CMDS = {
     '                  <span class="t-info">Promo  :</span> 2024/2026 → CESI 2026/2029\n' +
     '                  <span class="t-info">Depth  :</span> 404m\n' +
     '                  <span class="t-info">CPU    :</span> Cerveau x1 (ancien soignant, caféiné)\n' +
-    '                  <span class="t-info">Stack  :</span> PHP · Python · SQL · HTML/CSS · Git\n' +
+    '                  <span class="t-info">Stack  :</span> PHP · Symfony · Python · SQL · HTML/CSS · Git\n' +
     '                  <span class="t-info">Stages :</span> Domolandes (2025) · 29Studio (2026)\n' +
     '                  <span class="t-info">Emploi :</span> TotalEnergies (2025) — Job d\'été Python\n' +
     '                  <span class="t-info">Certif :</span> SecNumAcadémie ANSSI 2025\n' +
@@ -252,6 +252,7 @@ function runCommand(raw) {
     const map={cv:'cv',stages:'stages',ateliers:'ateliers',veille:'veille',skills:'competences',competences:'competences',contact:'contact',home:'home','~':'home'};
     const tg=args[0]||'~';
     if(map[tg]){ addLine('<span class="t-ok">▹ cap sur /'+tg+'</span>'); setTimeout(()=>showPage(map[tg]),350); }
+    else if(tg==='canispro'){addLine('<span class="t-ok">▹ ouverture Canis Pro...</span>');setTimeout(()=>{showPage('ateliers');setTimeout(()=>openModal('canispro'),300);},300);}
     else addLine('<span class="t-err">navigation impossible: '+esc(tg)+'</span>\n<span class="t-dim">zones: cv stages ateliers veille skills contact home</span>');
     return;
   }

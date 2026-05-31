@@ -1,22 +1,27 @@
 // ═══════════════════════════════════════════════════
 //  PARTICLES — Portfolio Yohan IRIBARREN
 // ═══════════════════════════════════════════════════
-
-// ── Modal particles ────────────────────────────────────
 (function() {
   var canvas, ctx, particles = [], raf, active = false;
-  function initCanvas() { canvas = document.getElementById('modal-canvas'); if(canvas) { ctx = canvas.getContext('2d'); resizeCanvas(); window.addEventListener('resize', resizeCanvas); } }
-  function resizeCanvas() { var box = document.getElementById('modal-box'); if(box&&canvas) { canvas.width=box.offsetWidth; canvas.height=box.offsetHeight; } }
+
+  function initCanvas() {
+    canvas = document.getElementById('modal-canvas');
+    if (canvas) { ctx = canvas.getContext('2d'); resizeCanvas(); window.addEventListener('resize', resizeCanvas); }
+  }
+  function resizeCanvas() {
+    var box = document.getElementById('modal-box');
+    if (box && canvas) { canvas.width = box.offsetWidth; canvas.height = box.offsetHeight; }
+  }
   function isLight() { return document.body.classList.contains('ocean-light'); }
   function createParticles() {
     particles = [];
-    var w=canvas.width, h=canvas.height;
-    for(var i=0;i<18;i++) particles.push({type:'bubble',x:Math.random()*w,y:h+Math.random()*h*0.5,r:Math.random()*3.5+0.8,speed:Math.random()*0.5+0.2,wobble:Math.random()*Math.PI*2,alpha:Math.random()*0.3+0.08});
-    for(var j=0;j<25;j++) particles.push({type:'plankton',x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.2+0.3,vx:(Math.random()-0.5)*0.25,vy:(Math.random()-0.5)*0.2,pulse:Math.random()*Math.PI*2,alpha:Math.random()*0.25+0.06});
-    for(var k=0;k<4;k++) particles.push({type:'ray',x:w*0.1+w*0.25*k,phase:Math.random()*Math.PI*2,alpha:Math.random()*0.06+0.02,width:30+Math.random()*30});
+    var w = canvas.width, h = canvas.height;
+    for (var i=0;i<18;i++) particles.push({type:'bubble',x:Math.random()*w,y:h+Math.random()*h*0.5,r:Math.random()*3.5+0.8,speed:Math.random()*0.5+0.2,wobble:Math.random()*Math.PI*2,alpha:Math.random()*0.3+0.08});
+    for (var j=0;j<25;j++) particles.push({type:'plankton',x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.2+0.3,vx:(Math.random()-0.5)*0.25,vy:(Math.random()-0.5)*0.2,pulse:Math.random()*Math.PI*2,alpha:Math.random()*0.25+0.06});
+    for (var k=0;k<4;k++) particles.push({type:'ray',x:w*0.1+w*0.25*k,phase:Math.random()*Math.PI*2,alpha:Math.random()*0.06+0.02,width:30+Math.random()*30});
   }
   function drawFrame(t) {
-    if(!active||!canvas||!ctx) return;
+    if (!active||!canvas||!ctx) return;
     ctx.clearRect(0,0,canvas.width,canvas.height);
     var w=canvas.width,h=canvas.height,light=isLight();
     particles.forEach(function(p) {
@@ -26,12 +31,16 @@
     });
     raf = requestAnimationFrame(drawFrame);
   }
-  function startParticles(){if(active)return;active=true;resizeCanvas();createParticles();raf=requestAnimationFrame(drawFrame);}
-  function stopParticles(){active=false;if(raf)cancelAnimationFrame(raf);if(ctx&&canvas)ctx.clearRect(0,0,canvas.width,canvas.height);}
-  document.addEventListener('DOMContentLoaded', function() {
-    initCanvas();
-    var origOpen=window.openModal, origClose=window.closeModal;
-    if(typeof origOpen==='function'){window.openModal=function(id){origOpen(id);setTimeout(startParticles,50);};}
-    if(typeof origClose==='function'){window.closeModal=function(){origClose();stopParticles();};}
-  });
+
+  window._particlesStart = function() {
+    if (active) return;
+    active = true; resizeCanvas(); createParticles(); raf = requestAnimationFrame(drawFrame);
+  };
+  window._particlesStop = function() {
+    active = false;
+    if (raf) cancelAnimationFrame(raf);
+    if (ctx && canvas) ctx.clearRect(0,0,canvas.width,canvas.height);
+  };
+
+  document.addEventListener('DOMContentLoaded', initCanvas);
 })();

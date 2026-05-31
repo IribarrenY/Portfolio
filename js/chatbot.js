@@ -52,6 +52,16 @@
       p: ['domolandes','domo','maremne','audit','inpi','ecofloc','markdown'],
       r: () => { setTimeout(() => goModal('domolandes'), 80); return `J'ouvre le stage **Domolandes** ! 🏗️ [MODAL:domolandes]\n\nJuin 2025 à Saint-Geours-de-Maremne — audit, identité visuelle, documentation EcoFloc.`; }
     },
+    // ── PROJET CANIS PRO ──
+    {
+      p: ['canis','canisp','canispro','chien','éducation canine','education canine','symfony','twig','doctrine','e6','épreuve','epreuve'],
+      r: () => { setTimeout(() => goModal('canispro'), 80); return `J'ouvre le **Projet Canis Pro** ! 🐕 [MODAL:canispro]\n\nÉpreuve E6 BTS SIO SLAM 2ème année — application de gestion d'un centre d'éducation canine avec Symfony, MVC/DAO, gestion des rôles.`; }
+    },
+    // ── JOURNÉE D'INTÉGRATION ──
+    {
+      p: ['journée intégration','journee integration','journée d intégration','intégration','developpeur','developer','gestiondeveloppeurs','apropos','a propos','ticket'],
+      r: () => { setTimeout(() => goModal('journeeintegration'), 80); return `J'ouvre la **Journée d'intégration** ! 🤝 [MODAL:journeeintegration]\n\nAtelier pro — prise en main d'un projet existant, MVC/DAO, GitHub et gestion de tickets.`; }
+    },
     // ── PROJET FA ──
     {
       p: ['fâ','fa','archéologique','archeologique','barzan','billetterie','charente','parc','agile','scrum','étoile de mer'],
@@ -80,7 +90,8 @@
     // ── TOUS LES PROJETS ──
     {
       p: ['projet','atelier','réalisation','realisation','travaux','scolaire','ateliers'],
-      r: () => `Voici ses projets scolaires ! [NAV:ateliers]\n\nCliquez sur l'un d'eux pour l'ouvrir :\n- 🎡 **Projet Fâ** — billetterie PHP MVC, Agile\n- 🚘 **Netcar** — MVC, SQL, Git\n- 🏔️ **Pic du Midi** — WordPress, Gantt\n- 🚗 **Locaboard** — location dynamique PHP\n- 🌐 **CV Web** — HTML, CSS, JS`
+      r: () => `Voici ses projets scolaires ! [NAV:ateliers]\n\nCliquez sur l'un d'eux pour l'ouvrir :\n- 🐕 **Canis Pro** — Symfony, MVC/DAO, épreuve E6\n- 🤝 **Journée intégration** — MVC/DAO, GitHub, tickets
+- 🎡 **Projet Fâ** — billetterie PHP MVC, Agile\n- 🚘 **Netcar** — MVC, SQL, Git\n- 🏔️ **Pic du Midi** — WordPress, Gantt\n- 🚗 **Locaboard** — location dynamique PHP\n- 🌐 **CV Web** — HTML, CSS, JS`
     },
     // ── TOUS LES STAGES ──
     {
@@ -175,11 +186,10 @@
   // ── Suggestions ──────────────────────────────────────────
   const SUGGS = [
     { l: '🐠 Qui est Yohan ?',     t: 'Qui est Yohan ?' },
+    { l: '🐕 Projet Canis Pro',    t: 'Projet Canis Pro' },
     { l: '📸 Stage 29Studio',       t: 'Stage 29Studio' },
-    { l: '🏗️ Stage Domolandes',     t: 'Stage Domolandes' },
-    { l: '🎡 Projet Fâ',            t: 'Projet Fâ' },
+    { l: '🎡 Site Fâ — E6',            t: 'Projet Fâ' },
     { l: '📊 Ses compétences',      t: 'Ses compétences techniques' },
-    { l: '🎮 Centres d\'intérêts',    t: 'Quels sont ses centres d\'intérêts ?' },
     { l: '📡 Le contacter',         t: 'Comment contacter Yohan ?' },
   ];
 
@@ -234,7 +244,7 @@
     transform: scale(0.88) translateY(20px); opacity: 0; pointer-events: none;
     transform-origin: bottom right;
     transition: transform .3s cubic-bezier(.34,1.4,.64,1), opacity .25s ease;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
   }
   #bloupi-win.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 
@@ -270,11 +280,11 @@
   @keyframes bloupi-bounce { 0%,80%,100%{transform:scale(0.7);opacity:.5} 40%{transform:scale(1.15);opacity:1} }
 
   .bloupi-suggestions { display:flex; flex-wrap:wrap; gap:6px; padding:8px 12px; border-top:1px solid rgba(14,64,96,0.5); }
-  .bloupi-sug { background:rgba(6,40,64,0.8); border:1px solid #0e4060; color:#b0e8e2; font-size:10.5px; font-family:'Share Tech Mono',monospace; padding:5px 10px; border-radius:20px; cursor:pointer; transition:background .2s,border-color .2s,color .2s,transform .15s; letter-spacing:.02em; }
+  .bloupi-sug { background:rgba(6,40,64,0.8); border:1px solid #0e4060; color:#b0e8e2; font-size:10.5px; font-family:'Share Tech Mono','Courier New',monospace; padding:5px 10px; border-radius:20px; cursor:pointer; transition:background .2s,border-color .2s,color .2s,transform .15s; letter-spacing:.02em; }
   .bloupi-sug:hover { background:rgba(0,201,170,0.12); border-color:#00c9aa; color:#00e5ff; transform:translateY(-1px); }
 
   .bloupi-input-area { display:flex; align-items:center; gap:8px; padding:10px 12px; border-top:1px solid #0e4060; background:rgba(2,13,20,0.5); }
-  #bloupi-input { flex:1; background:rgba(6,40,64,0.6); border:1px solid #0e4060; border-radius:10px; color:#c8f0ee; font-family:'Share Tech Mono',monospace; font-size:12px; padding:8px 12px; outline:none; transition:border-color .2s,box-shadow .2s; caret-color:#00e5ff; }
+  #bloupi-input { flex:1; background:rgba(6,40,64,0.6); border:1px solid #0e4060; border-radius:10px; color:#c8f0ee; font-family:'Share Tech Mono','Courier New',monospace; font-size:12px; padding:8px 12px; outline:none; transition:border-color .2s,box-shadow .2s; caret-color:#00e5ff; }
   #bloupi-input::placeholder { color:#2a5060; }
   #bloupi-input:focus { border-color:#00c9aa; box-shadow:0 0 0 2px rgba(0,201,170,0.12); }
   #bloupi-send { background:linear-gradient(135deg,#00c9aa,#00e5ff); border:none; border-radius:10px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#020d14; transition:transform .2s,box-shadow .2s; flex-shrink:0; }

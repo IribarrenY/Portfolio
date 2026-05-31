@@ -28,7 +28,7 @@
 html { scroll-behavior:smooth; }
 
 body {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', 'Courier New', 'Lucida Console', monospace;
   background: var(--abyss);
   color: var(--text);
   min-height: 100vh;
@@ -190,7 +190,7 @@ body::before {
   background: none;
   border: 1px solid var(--border2);
   color: var(--cyan);
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', 'Courier New', 'Lucida Console', monospace;
   font-size: .68rem;
   padding: .2rem .65rem;
   border-radius: 4px;
@@ -874,4 +874,79 @@ nav {
   .t-body { max-height: 120px; }
   #bloupi-win { max-height: 70vh; bottom: 70px; }
   .bloupi-messages { max-height: 150px; }
+}
+
+/* ════════════════════════════════════════════════════
+   TECH PILLS — logos technos dans les modals
+   ════════════════════════════════════════════════════ */
+
+.tech-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 10px 4px 5px;
+  font-family: 'Share Tech Mono', 'Courier New', 'Lucida Console', monospace;
+  font-size: 11px;
+  color: var(--text);
+  cursor: default;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  white-space: nowrap;
+}
+
+.tech-pill:hover { background: var(--panel); }
+
+.tech-pill__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.tech-pill__icon svg { display: block; width: 22px; height: 22px; }
+
+.tech-pill__label { letter-spacing: .03em; }
+
+/* Couleur d'accent par technologie (hover) */
+.tech-pill--html:hover    { border-color: #e44d26; box-shadow: 0 0 8px #e44d2633; }
+.tech-pill--css:hover     { border-color: #264de4; box-shadow: 0 0 8px #264de433; }
+.tech-pill--js:hover      { border-color: #f7df1e; box-shadow: 0 0 8px #f7df1e33; }
+.tech-pill--php:hover     { border-color: #777bb4; box-shadow: 0 0 8px #777bb433; }
+.tech-pill--sql:hover     { border-color: #00758f; box-shadow: 0 0 8px #00758f33; }
+.tech-pill--mysql:hover   { border-color: #00618a; box-shadow: 0 0 8px #00618a33; }
+.tech-pill--git:hover     { border-color: #f05032; box-shadow: 0 0 8px #f0503233; }
+.tech-pill--github:hover  { border-color: #6e8094; box-shadow: 0 0 8px #6e809433; }
+.tech-pill--docker:hover  { border-color: #2496ed; box-shadow: 0 0 8px #2496ed33; }
+.tech-pill--vscode:hover  { border-color: #007acc; box-shadow: 0 0 8px #007acc33; }
+.tech-pill--wordpress:hover { border-color: #21759b; box-shadow: 0 0 8px #21759b33; }
+.tech-pill--symfony:hover { border-color: #89c4e1; box-shadow: 0 0 8px #89c4e133; }
+.tech-pill--twig:hover    { border-color: #bacf2f; box-shadow: 0 0 8px #bacf2f33; }
+.tech-pill--doctrine:hover{ border-color: #fc6a31; box-shadow: 0 0 8px #fc6a3133; }
+.tech-pill--markdown:hover{ border-color: #6b8fd2; box-shadow: 0 0 8px #6b8fd233; }
+.tech-pill--phpunit:hover { border-color: #8892be; box-shadow: 0 0 8px #8892be33; }
+.tech-pill--netbeans:hover{ border-color: #1b6ac6; box-shadow: 0 0 8px #1b6ac633; }
+.tech-pill--agile:hover   { border-color: #0052cc; box-shadow: 0 0 8px #0052cc33; }
+.tech-pill--mvc:hover     { border-color: #00c9aa; box-shadow: 0 0 8px #00c9aa33; }
+.tech-pill--gantt:hover   { border-color: #e57a00; box-shadow: 0 0 8px #e57a0033; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .tech-pill { font-size: 10px; padding: 3px 8px 3px 4px; gap: 5px; }
+  .tech-pill__icon { width: 18px; height: 18px; }
+  .tech-pill__icon svg { width: 18px; height: 18px; }
 }
