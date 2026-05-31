@@ -67,31 +67,12 @@
       p: ['fâ','fa','archéologique','archeologique','barzan','billetterie','charente','parc','agile','scrum','étoile de mer'],
       r: () => { setTimeout(() => goModal('sitefa'), 80); return `J'ouvre le **Projet Site Fâ** ! 🎡 [MODAL:sitefa]\n\nBilletterie PHP MVC pour le parc archéologique du Fâ — méthode Agile, espace admin & client.`; }
     },
-    // ── PROJET NETCAR ──
-    {
-      p: ['netcar','net car'],
-      r: () => { setTimeout(() => goModal('netcar'), 80); return `J'ouvre le **Projet Netcar** ! 🚘 [MODAL:netcar]\n\nArchitecture MVC, SQL, Git — projet de 1ère année semestre 2.`; }
-    },
-    // ── PROJET PIC DU MIDI ──
-    {
-      p: ['pic du midi','picdumidi','pic midi','wordpress','cms','gantt','boutique'],
-      r: () => { setTimeout(() => goModal('picdumidi'), 80); return `J'ouvre le **Site Boutique Pic du Midi** ! 🏔️ [MODAL:picdumidi]\n\nSite WordPress avec gestion de projet Gantt — 1ère année semestre 2.`; }
-    },
-    // ── PROJET LOCABOARD ──
-    {
-      p: ['locaboard','loca board','location','skateboard'],
-      r: () => { setTimeout(() => goModal('locaboard'), 80); return `J'ouvre le **Projet Locaboard** ! 🚗 [MODAL:locaboard]\n\nSite dynamique de location — PHP, HTML, CSS — 1ère année semestre 1.`; }
-    },
-    // ── PROJET CV WEB ──
-    {
-      p: ['cv web','cv perso','site personnel','cv html','cv-perso'],
-      r: () => { setTimeout(() => goModal('cv-perso'), 80); return `J'ouvre le **Site Web personnel (CV)** ! 🌐 [MODAL:cv-perso]\n\nPremier projet web — HTML, CSS, JavaScript — 1ère année semestre 1.`; }
-    },
+
     // ── TOUS LES PROJETS ──
     {
       p: ['projet','atelier','réalisation','realisation','travaux','scolaire','ateliers'],
       r: () => `Voici ses projets scolaires ! [NAV:ateliers]\n\nCliquez sur l'un d'eux pour l'ouvrir :\n- 🐕 **Canis Pro** — Symfony, MVC/DAO, épreuve E6\n- 🤝 **Journée intégration** — MVC/DAO, GitHub, tickets
-- 🎡 **Projet Fâ** — billetterie PHP MVC, Agile\n- 🚘 **Netcar** — MVC, SQL, Git\n- 🏔️ **Pic du Midi** — WordPress, Gantt\n- 🚗 **Locaboard** — location dynamique PHP\n- 🌐 **CV Web** — HTML, CSS, JS`
+- 🎡 **Projet Fâ** — billetterie PHP MVC, Agile`
     },
     // ── TOUS LES STAGES ──
     {

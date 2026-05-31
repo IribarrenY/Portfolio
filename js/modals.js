@@ -14,85 +14,8 @@ function buildUl(items) {
 function p(txt) { return '<p style="color:var(--text-dim);font-size:.8rem;line-height:1.8;margin-bottom:.6rem">'+txt+'</p>'; }
 function cyan(txt) { return '<p style="color:var(--cyan);font-size:.77rem;margin:.6rem 0 .2rem;letter-spacing:.04em">'+txt+'</p>'; }
 
-MODAL_DATA['cv-perso'] = {
-  title: '🌐 Site Web personnel (CV)',
-  body: [
-    '<div class="cmeta"><span>1ère année</span> · Semestre 1</div>',
-    buildSep('// langages &amp; outils'),
-    buildTags(['HTML','CSS','JavaScript']),
-    buildSep('// notions'),
-    p('Construction de pages Web statiques, navigation entre les pages, mise en place d\'un menu et d\'une horloge.'),
-    buildSep('// compétences'),
-    buildUl([
-      '1.3 — Développement de la présence en ligne de l\'organisation',
-      '1.3.1 — Valorisation de l\'image sur les médias numériques',
-      '1.6 — Organisation de son développement professionnel',
-      '1.6.3 — Gérer son identité professionnelle',
-      '1.6.4 — Développer son projet professionnel'
-    ])
-  ].join('')
-};
 
-MODAL_DATA['locaboard'] = {
-  title: '🚗 Projet Locaboard',
-  body: [
-    '<div class="cmeta"><span>1ère année</span> · Semestre 1</div>',
-    buildSep('// langages &amp; outils'),
-    buildTags(['HTML','CSS','PHP','JavaScript']),
-    buildSep('// notions'),
-    p('Construction d\'un site dynamique.'),
-    buildSep('// compétences'),
-    buildUl([
-      '1.3 — Développement de la présence en ligne de l\'organisation',
-      '1.3.1 — Valorisation de l\'image sur les médias numériques'
-    ])
-  ].join('')
-};
 
-MODAL_DATA['picdumidi'] = {
-  title: '🏔️ Site Boutique Pic du Midi',
-  body: [
-    '<div class="cmeta"><span>1ère année</span> · Semestre 2</div>',
-    buildSep('// langages &amp; outils'),
-    buildTags(['WordPress','GanttProject','CMS']),
-    buildSep('// notions'),
-    buildUl([
-      'CMS WordPress : fonctionnalités et paramétrages',
-      'Charte graphique, image de l\'organisation et identité numérique',
-      'Mode de projet classique (approche prédictive séquentielle)',
-      'Outil de gestion de projet : planification, sauvegarde et restauration',
-      'Création de pages dynamiques interactives'
-    ]),
-    buildSep('// compétences'),
-    buildUl([
-      '1.1 — Gérer le patrimoine informatique',
-      '1.1.1 — Gérer des sauvegardes',
-      '1.3 — Développer la présence en ligne',
-      '1.3.2 — Faire évoluer un site Web exploitant les données de l\'organisation',
-      '1.4 — Travailler en mode projet',
-      '1.4.1 — Planifier les activités'
-    ])
-  ].join('')
-};
-
-MODAL_DATA['netcar'] = {
-  title: '🚘 Projet Netcar',
-  body: [
-    '<div class="cmeta"><span>1ère année</span> · Semestre 2</div>',
-    buildSep('// langages &amp; outils'),
-    buildTags(['HTML','CSS','Git','NetBeans']),
-    buildSep('// notions'),
-    p('Langage SQL (LID), intégration continue des versions, architecture MVC.'),
-    buildSep('// compétences'),
-    buildUl([
-      '1.1 — Gérer le patrimoine informatique',
-      '1.3 — Faire évoluer un site Web exploitant les données de l\'organisation',
-      '2.1 — Conception et développement d\'applications',
-      '2.1.1 — Développement d\'une solution applicative',
-      '2.1.2 — Conception de l\'architecture d\'une solution applicative'
-    ])
-  ].join('')
-};
 
 // ─── HELPERS IMAGES ───────────────────────────────────────────────────────────
 function logo(src, alt) {
