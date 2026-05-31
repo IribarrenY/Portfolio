@@ -26,12 +26,8 @@ var TECH_LOGOS = {
 };
 
 var PROJECT_TECHS = {
-  'cv-perso':           ['HTML','CSS','JavaScript'],
-  'locaboard':          ['HTML','CSS','PHP','JavaScript'],
-  'picdumidi':          ['WordPress','GanttProject','MVC'],
-  'netcar':             ['HTML','CSS','SQL','Git','NetBeans'],
   'sitefa':             ['PHP','HTML','CSS','SQL','GitHub','Agile'],
-  'journeeintegration': ['PHP','HTML','CSS','GitHub','MVC'],
+  'journeeintegration': ['PHP','HTML','CSS','SQL','GitHub','MVC'],
   'canispro':           ['Symfony','PHP','Twig','Doctrine','MySQL','GitHub'],
   'domolandes':         ['Docker','GitHub','Markdown','VSCode'],
   'studio29':           ['PHP','MVC','PHPUnit','GitHub','Docker','MySQL','VSCode'],

@@ -53,15 +53,6 @@ MODAL_DATA['sitefa'] = {
   body: [
     '<div class="cmeta"><span>2ème année</span> · Semestre 1 · Méthode Agile · Épreuve E6 BTS SIO SLAM</div>',
 
-    buildSep('// langages &amp; outils'),
-    '<div style="display:flex;gap:1rem;align-items:center;margin:.5rem 0;flex-wrap:wrap">',
-      logo('logophp.png','PHP'),
-      logo('logocss.png','CSS'),
-      logo('logohtml.jpg','HTML'),
-      logo('logogithub.png','GitHub'),
-    '</div>',
-    buildTags(['PHP','HTML','CSS','SQL','MVC','DAO','GitHub','Méthode Agile']),
-
     buildSep('// contexte'),
     p('Le site de Fâ est un site gallo-romain situé en Charente-Maritime, dans le village de Barzan. Ouvert au public depuis 2005, il propose aux visiteurs des ateliers pédagogiques et ludiques : visite humoristique, fouilles archéologiques, atelier vin romain, présentation de la vie quotidienne gallo-romaine, ingénierie romaine et représentation des gladiateurs.'),
     p('La région est l\'un des financeurs principaux du site. Les employés, polyvalents, assurent aussi bien la tenue des ateliers que la gestion des entrées selon un planning rodé. La communication passe notamment par le site <em>fa-barzan.com</em> et des guides distribués dans les offices de tourisme.'),
@@ -369,8 +360,7 @@ MODAL_DATA['domolandes'] = {
       'Documents complexes → simplification progressive'
     ]),
     buildSep('// bilan'),
-    p('Expérience concrète dans un environnement professionnel. Développement de compétences techniques et organisationnelles. Sensibilisation aux enjeux du numérique responsable.'),
-    buildTags(['Docker','GitHub','Markdown','VSCode'])
+    p('Expérience concrète dans un environnement professionnel. Développement de compétences techniques et organisationnelles. Sensibilisation aux enjeux du numérique responsable.')
   ].join('')
 };
 
@@ -388,77 +378,164 @@ MODAL_DATA['studio29'] = {
     buildSep('// objectifs'),
     buildUl([
       'Création d\'un site de gestion de fournisseurs, clients, projets, factures et tournées',
-      'Développement d\'une interface complète en architecture MVC/DAO avec couche de sécurité',
-      'Mise en place de tests non-régressifs (TNR) avec PHPUnit pour fiabiliser l\'application',
-      'Sécurisation : gestion des accès utilisateurs, protection injections SQL',
+      'Architecture MVC/DAO complète avec gestion des rôles (admin, éditeur, visiteur)',
+      'Mise en place de tests non-régressifs (TNR) avec PHPUnit',
+      'Sécurisation : droits SQL par rôle, protection injections SQL, audit log',
       'Documentation technique et utilisateur'
     ]),
 
-    buildSep('// github &amp; versioning'),
-    p('Projet versionné sur GitHub en équipe. 92 commits au total, 2 branches actives. Gestion des pull requests et intégration continue.'),
+    buildSep('// architecture du projet'),
+    p('Le projet suit une architecture MVC stricte. Les contrôleurs gèrent chaque domaine métier, les modèles séparent classe métier et DAO, les vues PHP assurent le rendu. Un fichier <em>security.php</em> centralise le contrôle des accès.'),
+
+    strong('Arborescence générale :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('studio29_github.png','Dépôt GitHub 29Studio — 92 commits, 9 contributeurs'),
+      thumb('archi.png','Arborescence — controleurs, modeles, vues, security.php, configBDD.php'),
+    '</div>',
+
+    strong('Contrôleurs (11 domaines métier) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('controleurs.png','Contrôleurs — Calendrier, Client, CyberSecurite, Document, Entreprise, Fournisseur, Membre, Notification, Projet, Renseignement, Tournee'),
+    '</div>',
+
+    strong('Modèles (classes métier + DAO) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('modele.png','Modèles — Appartient, AuditLog, Base, CaisseEtape, Calendrier, Client, Concerner, Document, DroitProjet, Entreprise, Etape, Facture, Fournisseur...'),
+    '</div>',
+
+    strong('Vues (20+ templates PHP) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('vues.png','Vues — ajout, consult, liste pour chaque entité métier'),
     '</div>',
 
     buildSep('// base de données'),
-    p('Conception et implémentation d\'une base de données relationnelle complète : Entreprises, Clients, Fournisseurs, Projets, Documents, Factures, Membres, Tournées, Étapes, Calendrier, Notifications et droits d\'accès (15+ tables liées).'),
+    p('Base de données relationnelle complète — 15+ tables liées : Membre, Entreprise, Projet, Document, Facture, Tournée, Étape, CaisseEtape, Calendrier, Notification, Renseignement, DroitProjet, Appartenir, Client, Fournisseur, Organisation, Concerner, AuditLog.'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('29Studio_BDD.png','Schéma complet de la base de données'),
+      thumb('BDD.png','Schéma complet de la base de données — toutes les relations'),
     '</div>',
 
-    buildSep('// architecture MVC / DAO'),
-    p('Architecture MVC complète avec couche DAO dédiée pour chaque entité métier. Séparation claire des responsabilités entre contrôleurs, modèles (classe métier + classe technique) et vues.'),
+    buildSep('// configuration BDD &amp; gestion des rôles'),
+    p('Chaque entité métier dispose de comptes SQL dédiés par action (Read, Write, Delete, Update) — principe du moindre privilège. La connexion est établie dynamiquement selon le rôle requis via <em>setConnexionSelonRole()</em>.'),
 
-    strong('Contrôleurs :'),
+    strong('Configuration DSN et rôles (configBDD.php) :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('studio29_mvc_1.png','Liste des contrôleurs 29Studio'),
+      thumb('configBDD.png','configBDD.php — DSN MySQL, rôles ClientRead/Write/Delete'),
     '</div>',
 
-    strong('Modèles :'),
+    strong('Création des utilisateurs SQL :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('studio29_mvc_2.png','Modèles 29Studio — partie 1'),
-      thumb('studio29_mvc_3.png','Modèles 29Studio — partie 2'),
-      thumb('studio29_mvc_4.png','Modèles 29Studio — partie 3'),
+      thumb('initBDD_CreationUtilisateurBase.png','CREATE USER — CaisseEtape_Read/Write/Delete/Update, Facture_Read/Write...'),
     '</div>',
 
-    strong('Vues :'),
+    strong('Attribution des droits SQL :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('studio29_mvc_5.png','Liste des vues 29Studio'),
+      thumb('initBDD_DroitUtilisateurBase.png','GRANT SELECT/INSERT/DELETE/UPDATE par table et rôle'),
     '</div>',
 
-    buildSep('// missions réalisées'),
-    cyan('Analyse des besoins'),
-    p('Recueil des besoins auprès de l\'équipe. Identification des fonctionnalités clés : fournisseurs, clients, projets, factures, documents, tournées. <em>Outils : réunions d\'équipe, Google Docs</em>'),
-    cyan('Conception de l\'application'),
-    p('Modélisation UML des classes métier. Conception de la BDD avec MCD. Définition de l\'architecture MVC/DAO. <em>Outils : MySQL Workbench, Google Docs</em>'),
-    cyan('Développement du site web'),
-    p('Développement d\'une interface utilisateur complète. Intégration des fonctionnalités CRUD pour toutes les entités métier (fournisseurs, clients, projets, factures, membres, tournées). <em>Outils : VSCode, Docker, GitHub</em>'),
-    cyan('Tests non-régressifs (TNR) &amp; sécurité'),
-    p('Mise en place de PHPUnit pour les tests unitaires non-régressifs. Authentification sécurisée (password_hash / password_verify). Gestion des rôles et droits d\'accès par projet. CAPTCHA anti-robot. Protection contre les injections SQL.'),
-    cyan('Documentation'),
-    p('Rédaction de la documentation technique (architecture, BDD, API interne) et de la documentation utilisateur (guide d\'utilisation, procédures).'),
+    buildSep('// sécurité — audit log &amp; triggers'),
+    p('Un système d\'audit complet trace toutes les modifications de la base de données. Des triggers SQL (AFTER INSERT/UPDATE/DELETE) alimentent la table <em>AuditLog</em> qui enregistre la table, l\'opération, l\'utilisateur responsable, l\'horodatage et les anciennes/nouvelles valeurs.'),
+
+    strong('Table AuditLog :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('BDDLog.png','AuditLog — table_name, operation, record_id, user_responsible, change_timestamp, old_values, new_values, ip_address'),
+    '</div>',
+
+    strong('Triggers — liste complète (21 triggers) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('AudiLog.png','Triggers AFTER INSERT/UPDATE/DELETE sur Appartenir, Document, DroitProjet, Facture, Membre, Projet, Renseignement'),
+    '</div>',
+
+    buildSep('// exemple de fonctionnalité — liste des projets avec droits'),
+    p('Fonctionnalité centrale illustrant la gestion des rôles : la liste des projets affichés et les actions disponibles (Voir/Modifier/Supprimer) varient selon le droit de l\'utilisateur (admin, éditeur, visiteur).'),
+
+    strong('Contrôleur — case listeProjets :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('controleurCaseListeProjet.png','case listeProjets — récupération droits par projet, toutProjet si admin'),
+    '</div>',
+
+    strong('Vue — listeProjets.php (partie 1 — filtre &amp; bouton ajout) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('vueListeProjetv1.png','Vue listeProjets — bouton Ajouter si admin, filtre par projet'),
+    '</div>',
+
+    strong('Vue — listeProjets.php (partie 2 — table avec droits) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('vueListeProjetv2.png','Vue listeProjets — bouton Modifier masqué si visiteur, Supprimer si admin'),
+    '</div>',
+
+    buildSep('// gestion des droits par projet'),
+    p('Chaque membre peut avoir un droit différent sur chaque projet : <strong>admin</strong> (accès total), <strong>éditeur</strong> (lecture + modification), <strong>visiteur</strong> (lecture seule). Un membre admin voit tous les projets de son entreprise.'),
+
+    strong('Ajouter un membre au projet — visuel :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteAjouterMembreAuProjet.png','Formulaire ajout membre — sélection + droit Visiteur/Éditeur/Admin'),
+    '</div>',
+
+    strong('Membres du projet — liste avec droits :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteVoirLesMembreDuprojetTest.png','Membres du projet — DuPainChaine Visiteur (Ce projet) / Delage Karine éditeur (Tous)'),
+    '</div>',
+
+    strong('DAO — méthode ajouterDroitProjet() :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('methodeAjoutDroitProjet.png','DroitProjetDAO — ajouterDroitProjet() avec requête préparée INSERT'),
+    '</div>',
+
+    buildSep('// visuels — différence éditeur / visiteur'),
+    strong('Vue projet — rôle éditeur (boutons Modifier disponibles) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteConsulterProjetEditeur.png','Détails projet — éditeur : boutons Modifier le projet visibles'),
+    '</div>',
+
+    strong('Vue projet — rôle visiteur (lecture seule) :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteConsuterProjetVisiteur.png','Détails projet — visiteur : pas de bouton Modifier'),
+    '</div>',
+
+    strong('Vue membre hors admin — gestion compte :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteCompteHorsAdmin.png','Modifier un Membre — Nom, Prénom, login, mdp généré, sociétés associées'),
+    '</div>',
+
+    buildSep('// visuels — factures &amp; tournées'),
+    strong('Liste des factures clients :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteFactureClient.png','Liste clients — Date, N°, Client, Projet, Libellé, HT, TVA, Échéance, Action (Lecture seule si visiteur)'),
+    '</div>',
+
+    strong('Consultation d\'une tournée — rôle éditeur :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteCaseEditeur.png','Tournée LaTournée — Étape #1, caisse, récapitulatif global CB/Espèces/TTC/HT/Écart'),
+    '</div>',
+
+    strong('Consultation d\'une tournée — rôle visiteur :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('siteCaseVisiteur.png','Tournée LaTournée — même vue sans boutons Modifier/Supprimer/Ajouter'),
+    '</div>',
 
     buildSep('// compétences'),
     buildUl([
-      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO complet)',
-      '2.3 — Gestion des données (BDD relationnelle, 15+ tables, triggers SQL)',
-      '1.5 — Mise à disposition des utilisateurs (tests PHPUnit/TNR, déploiement Docker)',
+      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO complet, 11 contrôleurs)',
+      '2.3 — Gestion des données (BDD relationnelle 15+ tables, triggers SQL, AuditLog)',
+      '1.5 — Mise à disposition des utilisateurs (TNR PHPUnit, déploiement Docker)',
       '1.4 — Travail en mode projet (GitHub, 92 commits, gestion des branches)',
-      '3.5 — Cyber sécurisation (authentification, hachage, rôles, CAPTCHA, anti-injection)',
+      '3.1 — Protection des données à caractère personnel (Renseignement, RGPD)',
+      '3.2 — Préservation de l\'identité numérique (audit log, traçabilité)',
+      '3.3 — Sécurisation des accès (rôles admin/éditeur/visiteur, moindre privilège SQL)',
+      '3.4 — Garantie disponibilité/intégrité/confidentialité (triggers AFTER, AuditLog complet)',
+      '3.5 — Cyber sécurisation (requêtes préparées, password_hash, CAPTCHA)',
       '2.2 — Maintenance corrective et évolutive (intégration continue, versioning)'
     ]),
 
     buildSep('// difficultés &amp; solutions'),
     buildUl([
-      'Gestion de documents complexes → architecture documentaire dédiée',
-      'Évolution des exigences en cours de stage → adaptation agile et commits fréquents',
-      'Contrainte d\'unicité en BDD → refactoring avec triggers SQL',
-      'BDD complexe (15+ tables liées) → modélisation MCD rigoureuse en amont'
+      'Gestion des droits par projet complexe → table DroitProjet + méthode trouverDroitProjet()',
+      'Traçabilité des modifications → 21 triggers AFTER sur toutes les tables sensibles',
+      'BDD 15+ tables liées → modélisation MCD rigoureuse, schéma validé en amont',
+      'Évolution des exigences en cours de stage → adaptation agile, commits fréquents'
     ]),
 
     buildSep('// bilan'),
-    p('Expérience très enrichissante dans un environnement professionnel stimulant. Développement de compétences techniques avancées (MVC/DAO complet, PHPUnit/TNR, Docker) et travail en équipe réelle avec 9 contributeurs et 92 commits GitHub.'),
-    buildTags(['PHP','MVC','DAO','PHPUnit','TNR','GitHub','Docker','MySQL'])
+    p('Stage très enrichissant dans un environnement professionnel réel. Développement d\'une application complète de A à Z, avec une attention particulière portée à la sécurité (audit log, rôles SQL, triggers) et à la maintenabilité (architecture MVC/DAO, PHPUnit/TNR).')
   ].join('')
 };
 
@@ -470,61 +547,128 @@ MODAL_DATA['journeeintegration'] = {
   body: [
     '<div class="cmeta"><span>2ème année</span> · Atelier professionnel · MVC/DAO · GitHub</div>',
 
-    buildSep('// langages &amp; outils'),
-    buildTags(['PHP','HTML','CSS','GitHub','MVC','DAO']),
-
     buildSep('// contexte'),
-    p('Atelier professionnel de 2ème année simulant une situation réelle d\'intégration dans une équipe de développement. Prise en main d\'un projet existant, compréhension de l\'architecture en place, et contribution rapide au code via la gestion de branches GitHub.'),
+    p('Atelier professionnel de 2ème année simulant une situation réelle d\'intégration dans une équipe de développement. Prise en main d\'un projet PHP MVC/DAO existant — application <strong>"Journée d\'intégration"</strong> du BTS SIO du lycée Saint-John Perse. L\'objectif : comprendre l\'architecture en place, traiter des tickets de support et contribuer rapidement au code via la gestion de branches GitHub.'),
 
     buildSep('// architecture MVC / DAO'),
-    p('Le projet suit une architecture MVC avec couche DAO. Chaque entité métier dispose de sa classe métier et de sa classe technique (DAO) pour l\'accès aux données.'),
+    p('Le projet suit une architecture MVC stricte avec couche DAO dédiée. Les contrôleurs (<em>gestionDeveloppeurs.php</em>, <em>gestionCompetence.php</em>) orchestrent la logique, les modèles séparent classe métier et accès BDD (BaseDAO, BaseDeveloppeurDAO, BaseCompetenceDAO), les vues PHP assurent le rendu.'),
+
+    strong('Arborescence du projet :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_mvc.png','Architecture MVC/DAO — Journée intégration'),
+      thumb('BaseMVC_Inte.png','Arborescence MVC — controleurs, modeles, vues'),
+      thumb('baseDAO_Inte.png','Couche DAO — BaseDAO, BaseDeveloppeurDAO, BaseCompetenceDAO'),
     '</div>',
 
-    buildSep('// gestion de versions'),
-    p('Utilisation de GitHub avec gestion de branches : branche principale, branche de développement, branches fonctionnelles. Suivi des différentes versions et historique des commits.'),
+    buildSep('// gestion de versions — GitHub'),
+    p('Utilisation de GitHub avec gestion de branches et versioning sémantique. Chaque version correspond à un incrément fonctionnel : de l\'initial commit jusqu\'à V4 avec la fonctionnalité de recherche.'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_github.png','Versions GitHub — branches'),
+      thumb('branche_Inte.png','Branches GitHub — main, suprimer-modifier, V2.2, V2.1'),
+      thumb('version_Inte.png','Historique des commits — V4, v3, V2.2, V2.1, V1'),
+    '</div>',
+
+    buildSep('// configuration BDD &amp; gestion des accès'),
+    p('La base de données <em>tp_sio2_bdjourneeintegration</em> est configurée via <em>configBdd.php</em> avec des rôles utilisateurs distincts selon les actions (lecture, modification, suppression). Chaque compte dispose uniquement des droits nécessaires — principe du moindre privilège.'),
+
+    strong('Configuration DSN et rôles :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('configBDD_Inte.png','configBdd.php — DSN local/remote, rôles DevRead/CompRead'),
+    '</div>',
+
+    strong('Création des utilisateurs SQL :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('createUser_Inte.png','CREATE USER — JI_Dev_Read, CompModif, lili, lala...'),
+      thumb('droitUtilisateur_Inte.png','GRANT — droits SELECT/UPDATE/DELETE par table et rôle'),
+    '</div>',
+
+    cyan('Méthode setConnexionSelonRole() — BaseDAO'),
+    p('La connexion à la BDD est établie dynamiquement selon le rôle requis, en utilisant les variables d\'environnement définies dans configBdd.php.'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('methodeConnexion_Inte.png','BaseDAO — setConnexionSelonRole($role)'),
     '</div>',
 
     buildSep('// exemple de fonctionnalité — modifier un développeur'),
-    p('Fonctionnalité complète illustrant le fonctionnement MVC/DAO du projet : modification des informations d\'un développeur, accessible depuis la page À Propos.'),
+    p('Fonctionnalité complète illustrant le fonctionnement MVC/DAO : modification des informations d\'un développeur depuis la page À Propos, avec requête préparée anti-injection SQL.'),
 
-    cyan('Modèle — Developpeur.php (classe métier)'),
+    strong('Modèle — Developpeur.php (classe métier) :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_developpeur_php.png','Classe métier Developpeur.php'),
+      thumb('developpeur_Inte.png','Developpeur.php — id, nom, prenom, getters'),
     '</div>',
 
-    cyan('Contrôleur — gestionDeveloppeurs.php'),
-    p('Méthode de modification d\'un développeur dans le contrôleur dédié.'),
+    strong('DAO — BaseDeveloppeurDAO — méthode modifDev() :'),
+    p('Connexion avec le rôle <em>"lili"</em> (UPDATE autorisé), puis requête UPDATE avec les données du développeur.'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_controleur.png','Contrôleur gestionDeveloppeurs.php'),
+      thumb('methodeModif_Inte.png','BaseDeveloppeurDAO — modifDev() avec setConnexionSelonRole'),
     '</div>',
 
-    cyan('Vue — aPropos.html'),
+    strong('Contrôleur — case modifDev dans gestionDeveloppeurs.php :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_vue.png','Vue aPropos.html'),
+      thumb('caseModif_Inte.png','Contrôleur — case modifDev : POST → modifDev() → apropos.php'),
     '</div>',
 
-    cyan('Visuel'),
+    strong('Vue — modifDev.php :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_visuel.png','Rendu visuel de la page'),
+      thumb('modifDev_Inte.png','Vue modifDev.php — formulaire Nom/Prenom avec action POST'),
     '</div>',
 
-    buildSep('// ticket'),
-    p('Ticket de demande d\'évolution traité lors de la journée, documentant la fonctionnalité à implémenter et son contexte.'),
+    strong('Vue — vueApropos.php (table des développeurs) :'),
     '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
-      thumb('journee_ticket.png','Ticket de la fonctionnalité'),
+      thumb('vueApropos.png','Vue apropos.php — tableau Nom/Prénom/Id/Supprimer/Modifier'),
+    '</div>',
+
+    strong('Visuels — résultat avant / après modification :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('resultatAprops_Inte.png','Page À Propos — liste développeurs avec actions'),
+      thumb('visuelApropos_Inte.png','Page À Propos — après modification GUETTE Lala → Garry'),
+      thumb('resultatMofier_Inte.png','Formulaire Modif Développeur — champs Nom/Prenom pré-remplis'),
+    '</div>',
+
+    buildSep('// fonctionnalité — lecture des salles (JSON)'),
+    p('Ticket #25785 traité : affichage des salles depuis un fichier JSON externe via la classe <em>FichierJSON</em>. Les données (nom, type, capacité, nbOrdinateurs, vidéoprojecteur) sont lues dynamiquement à chaque mise à jour du fichier.'),
+
+    strong('Données JSON — salle.json :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('salleJson_Inte.png','salle.json — salles 23/30/27 avec type, capacité, nbOrdinateurs'),
+    '</div>',
+
+    strong('Modèle — FichierJSON.php :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('FichierJson_Inte.png','FichierJSON.php — getLesSalles() via file_get_contents + json_decode'),
+    '</div>',
+
+    strong('Vue — vueSalle.php :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('vueSalle_Inte.png','Vue salles — foreach $lesSalles echo nom/type/capacité/nbOrd/vidéo'),
+    '</div>',
+
+    strong('Visuel — page Salles :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('visuSalle_Inte.png','Page Salles — liste des salles 23mixte, 30cours, 27ordinateurs'),
+    '</div>',
+
+    buildSep('// sécurité — requête préparée'),
+    p('La fonctionnalité de recherche de développeur utilise des requêtes préparées PDO pour prévenir les injections SQL : <em>bindValue</em> avec <em>PDO::PARAM_STR</em> sur les paramètres <em>:nom</em> et <em>:prenom</em>.'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('requetePrepare.png','rechercheDeveloppeur() — requête préparée LIKE :nom/:prenom'),
+    '</div>',
+
+    buildSep('// tickets traités'),
+    p('4 tickets issus du système de ticketing GLPI ont été traités lors de cet atelier :'),
+    '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">',
+      thumb('ticket1_Inte.png','Ticket #25782 — Mise à jour programme journée d\'intégration 2025'),
+      thumb('ticket2_Inte.png','Ticket #25787 — Incident : erreur PDOException colonne prénon'),
+      thumb('ticket3_Inte.png','Ticket #25783 — Compléments affichage ateliers (durée, capacité)'),
+      thumb('ticket4_Inte.png','Ticket #25785 — Ajout fonctionnalité liste des salles (JSON)'),
     '</div>',
 
     buildSep('// compétences'),
     buildUl([
-      '1.2 — Réponse aux incidents et demandes d\'assistance (traitement de ticket)',
-      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO)',
-      '1.1 — Gestion du patrimoine informatique (gestion de versions GitHub)',
+      '1.2 — Réponse aux incidents et demandes d\'assistance (4 tickets GLPI traités)',
+      '2.1 — Conception et développement d\'une solution applicative (MVC/DAO PHP)',
+      '1.1 — Gestion du patrimoine informatique (gestion de versions GitHub, branches)',
       '1.4 — Travail en mode projet (intégration dans une équipe existante)',
-      '2.2 — Maintenance corrective ou évolutive (prise en main d\'un projet existant)'
+      '2.2 — Maintenance corrective ou évolutive (correction bug PDOException, évolutions)',
+      '2.3 — Gestion des données (rôles SQL, requêtes préparées, lecture JSON)',
+      '3.3 — Sécurisation des équipements et des usages (principe moindre privilège, anti-injection)'
     ])
   ].join('')
 };
